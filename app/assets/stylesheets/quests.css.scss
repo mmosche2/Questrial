@@ -1,0 +1,150 @@
+// Place all the styles related to the Quests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+tr.field{
+	vertical-align: top;
+	color: #780000;
+}
+td.fieldlabel{
+	text-align: right;
+	padding-right: 20px;
+}
+
+div.left_content{
+	float: left;
+	padding:20px;
+	width: 460px;
+}
+	div.left_content.new_form{width:600px;}
+	div.left_content.index{}
+
+div.right_content{
+	float: left;
+	padding:20px;
+	width: 440px;
+}
+	div.right_content.new_form{width:300px;}
+	div.right_content.index{}
+	
+.this-quest-top{
+	padding:20px;
+	height: 150px;
+	width: 980px;
+}
+.join-button{
+	float:right;
+	margin-right: 100px;
+	margin-top: 50px;
+}
+p.this-quest-title{
+	font-size: 30px;
+	margin-top:50px;
+	font-weight: bold;
+}
+
+.this-quest-box{
+}
+div.quest-photo{
+	float:left;
+	
+}
+.this-quest-title-box{
+	float:left;
+	margin-left:20px;
+}
+h1.quest-stat{
+	font: bold 300%/110% "Lucida Grande";
+	position: relative;
+	color: #464646;
+}
+	h1.quest-stat.completed{color: #A23A00}
+	
+h1.quest-stat span{
+  background: url(gradient-glossy.png) repeat-x;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 31px;
+}
+.this-quest-cmd{
+}
+div.quest-info{
+	float:left;
+	margin-left: 10px;
+	width: 430px;
+}
+	div.quest-info td{font-family: helvetica;}
+	div.quest-info.list{width: 310px;}
+
+p.quest-title{
+	font-size: 20px;
+	font-family: helvetica;
+
+}
+.quest-start{}
+.quest-end{}
+.quest-date-label{
+	text-align: right;
+	font-weight:bold;
+	vertical-align: top;
+}
+.quest-description{
+	width: 100%;
+}
+
+/****** NEW QUEST ******/
+div.rules{}
+p.rules-header{
+	font-size: 24px;
+	font-weight: bold;
+	font-family: Georgia,serif;
+	font-variant: small-caps;
+}
+p.rule{
+	font-size: 20px;
+	font-family: Georgia,serif;
+	font-variant: small-caps;
+	font-weight: 100;
+}
+
+/****** COMMENTS ******/
+div.comment{
+	padding:5px;
+	border: 1px solid #AAAAAA;
+	background-color: #CCCCCC;
+	margin-bottom: 20px;
+}
+.commenter{
+	font-weight: bold;
+	margin:0px;
+}
+.comment_body{}
+.comment_destroy{
+	margin:0px;
+
+}
+
+div.clear{clear:both;}
+
+/****** ALL QUESTS LISTING ******/
+
+.find-quests-box{
+	margin-left: 20px;
+	line-height: 1;
+}
+.quest-listing{
+	padding:5px;
+	border: 1px solid #BBBBBB;
+	margin-top: 10px;
+}
+.quest-listing p.quest-title{
+	font-size: 18px;
+	margin:0 0 10px 0;
+}
+
+.quest-listing-opacity{
+	opacity: .5;
+	height:100%;
+	width:100%;
+}

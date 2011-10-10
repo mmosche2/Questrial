@@ -1,0 +1,76 @@
+<%= form_for(@quest, :html => { :multipart => true }) do |f| %>
+  <% if @quest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quest.errors.count, "error") %> prohibited this quest from being saved:</h2>
+
+      <ul>
+      <% @quest.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :start %>
+    <%= f.date_select :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %>
+    <%= f.date_select :end %>
+  </div>
+  
+  <% if @quest.photo? %>
+	<%= image_tag @quest.photo.url(:small) %>
+  <% end %>
+  
+  <div class="field">
+	<%= f.label 'Attach Picture' %>
+	<%= f.file_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  -->
+  
+  <table>
+  <tr class="field">
+    <td class="fieldlabel"><%= f.label :title %></td>
+    <td><%= f.text_field :title %>
+  </tr>
+  <tr class="field">
+    <td class="fieldlabel"><%= f.label :start %>
+    <td><%= f.date_select :start %>
+  </tr>
+  <tr class="field">
+    <td class="fieldlabel"><%= f.label :end %>
+    <td><%= f.date_select :end %>
+  </tr>
+  
+  <% if @quest.photo? %>
+	<%= image_tag @quest.photo.url(:small) %>
+  <% end %>
+  
+  <tr class="field">
+	<td class="fieldlabel"><%= f.label 'Attach Picture' %>
+	<td><%= f.file_field :photo %>
+  </tr>
+  <tr class="field">
+    <td class="fieldlabel"><%= f.label :description %><br />
+    <td><%= f.text_area :description, :size => "50x10" %>
+  </tr>
+  <tr class="actions">
+    <td><%= f.submit %></td>
+  </tr>
+  </table>
+  
+<% end %>

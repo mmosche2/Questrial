@@ -1,0 +1,15 @@
+<div class="comment">
+	<p class="commenter">	
+		<%= comment.commenter %> says...
+	</p>
+	 
+	<p class="comment_body">
+	  <%= comment.body %>
+	</p>
+
+	<p class="comment_destroy">
+	  <%= link_to 'Remove', [comment.quest, comment],
+				   :confirm => 'Are you sure?',
+				   :method => :delete %>
+	</p>
+</div>

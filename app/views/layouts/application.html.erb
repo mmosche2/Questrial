@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+  <title>Questrial</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="head_body_wrapper">
+
+
+
+<!------------ HEADER ---------------->	
+    <div id="Header">
+		
+			<%= link_to 'Questrial', "/home/index", :class => "questrial-title" %>
+		
+		<div id="top_navigation">
+			<%= link_to 'Find Your Quest', quests_path, :class => "nav_header" %>
+			<%= link_to 'Create Your Quest', new_quest_path, :class => "nav_header" %>
+			<a href="#" class="nav_header">Signup</a> 
+			<a href="#" class="nav_header">Login</a>
+		</div>
+		
+    </div>
+<!------------ END HEADER ---------------->	   
+<div class="body">
+	<%= yield %>
+</div>
+<!------------ FOOTER ---------------->	
+	<div class="push"></div>
+</div> <!-- end HeadBodyWrapper -->
+	<div class="prefooter_whitespace"></div>
+    <div class="footer">
+	  
+		<div id="bottom_navigation">
+			<span class="bottom_nav_header">@ME Productions, 2011</span> 
+			<%= link_to 'Contact Us', quests_path, :class => "bottom_nav_header" %>
+			<%= link_to 'Privacy Policy', quests_path, :class => "bottom_nav_header" %>
+			<%= link_to 'FAQ', quests_path, :class => "bottom_nav_header" %>
+		</div>
+		
+    </div>
+<!------------ END FOOTER ---------------->	   
+
+<!------------ FB INIT ---------------->	
+<div id="fb-root"></div>
+
+<script type="text/javascript">
+	window.fbAsyncInit = function() {
+		FB.init({appId: '176855415727787', status: true, cookie: true, xfbml: true, oauth: true});
+
+		/* All the events registered */
+		FB.Event.subscribe('auth.login', function(response) {
+			// do something with response
+			login();
+		});
+		FB.Event.subscribe('auth.logout', function(response) {
+			// do something with response
+			logout();
+		});
+
+		FB.getLoginStatus(function(response) {
+			if (response.session) {
+				// logged in and connected user, someone you know
+				login();
+			}
+		});
+	};
+	(function() {
+		var e = document.createElement('script');
+		e.type = 'text/javascript';
+		e.src = document.location.protocol +
+			'//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+
+	function login(){
+		FB.api('/me', function(response) {
+			document.getElementById('login').style.display = "block";
+			document.getElementById('login').innerHTML = response.name + " succsessfully logged in!";
+		});
+	}
+	function logout(){
+		document.getElementById('login').style.display = "none";
+	}
+
+</script>
+<!------------
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+  FB.init({
+    appId  : '176855415727787',
+    status : true, // check login status
+    cookie : true, // enable cookies to allow the server to access the session
+    xfbml  : true, // parse XFBML
+    channelURL : 'http://localhost:3000/channel.html', // channel.html file
+    oauth  : true // enable OAuth 2.0
+  });
+</script>
+---------------->
+</body>
+</html>

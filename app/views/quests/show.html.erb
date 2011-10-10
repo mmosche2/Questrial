@@ -1,0 +1,80 @@
+<div class="this-quest-top">
+
+	<div class="quest-photo"> 
+		<%= image_tag @quest.photo.url(:original) %>
+	</div>
+	
+	<div class="this-quest-title-box">
+		<p class="this-quest-title"><%= @quest.title %></p>
+		<%= link_to 'Edit', edit_quest_path(@quest), :class => "this-quest-cmd" %> 
+		<%= link_to 'Destroy', @quest, confirm: 'Are you sure?', method: :delete, :class => "this-quest-cmd" %>
+	</div>
+	
+	<% if Date.today > @quest.end %>
+	<% else %>
+		<!-- JOIN button -->
+		<%= image_tag("join-button.png", :mouseover => "join-button-MouseOver.png", :class => "join-button") %>
+	<% end %>
+	
+</div>
+
+<!-------------- LEFT CONTENT --------------->
+<div class="left_content">
+	<p id="notice"><%= notice %></p>
+	
+
+	<h2>The Wall</h2>
+	<% if @quest.comments.exists? %>
+		<%= render @quest.comments %>
+	<% else %>
+		No comments yet...
+	<% end %>
+	 
+	<h2>Add a comment:</h2>
+	<%= render "comments/form" %>
+	
+</div>
+
+<!-------------- RIGHT CONTENT --------------->
+<div class="right_content">
+  <div class="this-quest-box">
+
+	<div class="this-quest-stats">
+		<h1 class="quest-stat"><span></span>Number of Joiners: _____</h1>
+		<% launchdays = (Date.today - @quest.start).to_i %>
+		<% if Date.today >= @quest.start && Date.today <= @quest.end %>
+			<h1 class="quest-stat"><span></span>Launched! Today is day <%= launchdays + 1 %></h1>
+		<% elsif Date.today < @quest.start %>
+			<h1 class="quest-stat"><span></span>Days until Launch: <%= launchdays.abs %></h1>
+		<% elsif Date.today > @quest.end %>
+			<h1 class="quest-stat completed"><span></span>Completed</h1>
+		<% end %>
+	</div>
+	
+	<div class="quest-info">
+		<table>
+			<tr class="quest-start">
+				<td class="quest-date-label">Start:</td>
+				<td><%= @quest.start %></td>
+			</tr>
+			<tr class="quest-end">
+				<td class="quest-date-label">End:</td>
+				<td><%= @quest.end %></td>
+			</tr>
+			<tr class="quest-description">
+				<td class="quest-date-label">Description:</td>
+				<td><%= @quest.description %></td>
+			</tr>
+		</table>
+	</div>
+	<div class="clear"></div>
+
+	
+	
+  </div>
+</div>
+<div class="clear"></div>
+
+
+
+
