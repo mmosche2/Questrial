@@ -53,11 +53,11 @@
 
 		/* All the events registered */
 		FB.Event.subscribe('auth.login', function(response) {
-			// do something with response
+			alert("HI");
 			login();
 		});
 		FB.Event.subscribe('auth.logout', function(response) {
-			// do something with response
+			alert("Bye");
 			logout();
 		});
 
