@@ -80,11 +80,17 @@
 	function login(){
 		FB.api('/me', function(response) {
 			document.getElementById('login').style.display = "block";
-			document.getElementById('login').innerHTML = response.name + " succsessfully logged in!";
+			document.getElementById('login').innerHTML = response.name + " successfully logged in!";
 		});
 	}
 	function logout(){
 		document.getElementById('login').style.display = "none";
+	}
+	
+	function hi(){
+		FB.api('/me', function(response) {
+		  alert(response.name);
+		});
 	}
 
 </script>
