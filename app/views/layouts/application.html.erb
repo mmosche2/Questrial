@@ -27,6 +27,9 @@
     </div>
 <!------------ END HEADER ---------------->	   
 <div class="body">
+	<% flash.each do |key, value| %>
+		<div class="flash <%= key %>"><%= value %></div>
+	<% end %>
 	<%= yield %>
 </div>
 <!------------ FOOTER ---------------->	
