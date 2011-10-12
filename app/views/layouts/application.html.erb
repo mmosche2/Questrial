@@ -19,8 +19,14 @@
 		<div id="top_navigation">
 			<%= link_to 'Find Your Quest', quests_path, :class => "nav_header" %>
 			<%= link_to 'Create Your Quest', new_quest_path, :class => "nav_header" %>
-			<%= link_to 'Signup', signup_path, :class => "nav_header" %>
-			<%= link_to 'Login', '#', :class => "nav_header" %>
+			
+			<% if signed_in? %>
+				<%= link_to 'My Profile', current_user, :class => "nav_header" %>
+				<%= link_to 'Logout', signout_path, :method => :delete, :class => "nav_header" %>
+			<% else %>
+				<%= link_to 'Signup', signup_path, :class => "nav_header" %>
+				<%= link_to 'Login', signin_path, :class => "nav_header" %>
+			<% end %>
 
 		</div>
 		
