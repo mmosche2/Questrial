@@ -1,9 +1,16 @@
 Questrial::Application.routes.draw do
+  get "pages/contact"
+  get "pages/faq"
+  get "pages/privacy"
   get "home/index"
 
   resources :quests do
 	resources :comments
   end
+  
+  match '/contact', :to => 'pages#contact'
+  match '/faq', 	:to => 'pages#faq'
+  match '/privacy', :to => 'pages#privacy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

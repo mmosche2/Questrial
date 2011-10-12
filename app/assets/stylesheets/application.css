@@ -10,23 +10,29 @@
 #Header {
     padding: 10px;
     height: 39px;
-//	background-color: #780000;
-	background: url("sunrise-gradient-bg.jpg") repeat fixed 0 0 #9BADC4;
+	background-color: #467B2C;
+//	background: url("sunrise-gradient-bg.jpg") repeat fixed 0 0 #9BADC4;
 	color: white;
-	font-family: Georgia,serif;
+//	font-family: Georgia,serif;
 	font-variant: small-caps;
+	margin: 0px -10px;
+	opacity: 0.9;
+}
 
+div.header_header{
+	height:5px;
+	background-color:white;
 }
 
 a.questrial-title {
 	font-size: 35px;
-	margin: 10px 0px;
+	margin: 10px;
 	float: left;
 	color:white;
 	text-decoration: none;
 }
 	a.questrial-title:hover{
-		text-shadow: 2px 2px 5px white;
+		text-shadow: 1px 1px 10px white;
 	}
 	
 #top_navigation{
@@ -54,6 +60,7 @@ div.body{
 	height: 100%;
 	width: 980px;
 	margin: 0px auto;
+//	background-color: #8FD26E;
 }
 /****** FOOTER SECTION ******/
 .head_body_wrapper{
@@ -74,22 +81,23 @@ div.body{
 }
 .footer {
     height: 40px;
-//	background-color: #780000;
-	background: url("sunrise-gradient-bg.jpg") repeat 0 0 #9BADC4;
-	color: #A26300;
+	background-color: #286B07;
+//	background: url("sunrise-gradient-bg.jpg") repeat 0 0 #9BADC4;
+	color: #BBBBBB;
 }
 #bottom_navigation{
-	color:#A26300;
+	color:#BBBBBB;
 	padding: 10px 10px;
 	width:980px;
 	margin: 0 auto;
 }
 span.bottom_nav_header{
 	float:left;
+	margin-left: 20px;
 }
 a.bottom_nav_header{
 	float: right;
-	color: #A26300;
+	color: #BBBBBB;
 	padding-right: 10%;
 }
 
