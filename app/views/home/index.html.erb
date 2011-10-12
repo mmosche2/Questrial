@@ -1,12 +1,18 @@
 <!-------------- LEFT CONTENT --------------->
 <div class="left_content index">
-	
-  <% if signed_in? %>
-	<p> Hello, <%= current_user.name %>! </p>
-	<p> Your email address is <%= current_user.email %>. </p>
-	<%= link_to 'Logout', signout_path, :method => :delete %>
-				
-  <% end %>
+  
+  <div class="login-box home">
+	<% if !signed_in? %>
+		<%= render 'shared/loginform' %>
+	<% else %>
+		Welcome, <%= current_user.name %>!
+	<% end %>
+  </div>
+  
+  <div class="quote">
+	<p class="quote-text">"All life is an experiment. The more experiments you make the better."</p>
+	<p class="quote-author">Ralph Waldo Emerson</p>
+  </div>
 
 
 </div>
