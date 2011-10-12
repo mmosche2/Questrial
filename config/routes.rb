@@ -1,4 +1,5 @@
 Questrial::Application.routes.draw do
+ 
   get "pages/contact"
   get "pages/faq"
   get "pages/privacy"
@@ -8,6 +9,9 @@ Questrial::Application.routes.draw do
 	resources :comments
   end
   
+  resources :users
+  
+  match '/signup', 	:to => 'users#new'
   match '/contact', :to => 'pages#contact'
   match '/faq', 	:to => 'pages#faq'
   match '/privacy', :to => 'pages#privacy'
