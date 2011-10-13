@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 	user = User.find_by_email(params[:email])  
 	if user && user.authenticate(params[:password])  
 	  session[:user_id] = user.id  
-	  redirect_to current_user  
+	  redirect_back_or user  
 	else  
 	  flash.now[:error] = "Invalid email or password"  
 	  @title = "Sign in"
@@ -20,5 +20,7 @@ class SessionsController < ApplicationController
 	flash[:success] = "Logged out!"
 	redirect_to root_url
   end
+  
+
 
 end

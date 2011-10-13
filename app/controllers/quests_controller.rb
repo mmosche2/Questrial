@@ -5,7 +5,8 @@ class QuestsController < ApplicationController
   # GET /quests
   # GET /quests.json
   def index
-    @quests = Quest.all
+	@title = "All quests"
+    @quests = Quest.paginate(:page => params[:page], :per_page => 5, :order => 'start')
 
     respond_to do |format|
       format.html # index.html.erb

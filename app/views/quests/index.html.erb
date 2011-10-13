@@ -3,73 +3,13 @@
 
 	<h1>Find your Quest!</h1>
 
+	<%= will_paginate %>
+	
 	<div class="find-quests-box">
-
-	  <% @quests.each do |quest| %>
-		<div class="quest-listing">
-			<div class="quest-listing-opacity"></div>
-			<div class="quest-photo"> 
-				<%= link_to image_tag(quest.photo.url(:small)), quest %>
-			</div>
-			
-			<div class="quest-info list">
-				<p class="quest-title"><%= link_to quest.title, quest %></p>
-				<table>
-					<tr class="quest-info-row">
-						<td class="quest-date-label">Start:</td>
-						<td><%= quest.start %></td>
-					</tr>
-					<tr class="quest-info-row">
-						<td class="quest-date-label">End:</td>
-						<td><%= quest.end %></td>
-					</tr>
-					<tr class="quest-info-row">
-						<td class="quest-date-label">Status:</td>
-						<td>
-							<% if Date.today >= quest.start && Date.today <= quest.end %>
-								Active
-							<% elsif Date.today < quest.start %>
-								Upcoming
-							<% elsif Date.today > quest.end %>
-								Completed
-							<% end %>
-						</td>
-					</tr>
-					<tr class="quest-info-row">
-						<td class="quest-date-label">Description:</td>
-						<td><%= truncate(quest.description, :length => 80) %></td>
-					</tr>
-				</table>
-			</div>
-			<div class="clear"></div>
-
-		</div>
-	  <% end %>
-
-	<!--
-		<table>
-		  <tr>
-			<th>Picture</th>
-			<th>Title</th>
-			<th>Start</th>
-			<th>End</th>
-			<th>Description</th>
-		  </tr>
-
-		  
-		  <% @quests.each do |quest| %>
-			  <tr class="quest-listing">
-				<td><%= link_to image_tag(quest.photo.url(:thumb)), quest %></td>
-				<td><%= link_to quest.title, quest %></td>
-				<td><%= quest.start %></td>
-				<td><%= quest.end %></td>
-				<td><%= quest.description %></td>
-			  </tr>
-		  <% end %>
-		  
-		</table>
-	-->
+		<%= render @quests %>
 	</div>
+	
+	<%= will_paginate %>
 
 	<br />
 

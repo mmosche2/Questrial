@@ -1,0 +1,38 @@
+<div class="quest-listing">
+	<div class="quest-listing-opacity"></div>
+	<div class="quest-photo"> 
+		<%= link_to image_tag(quest.photo.url(:small)), quest %>
+	</div>
+	
+	<div class="quest-info list">
+		<p class="quest-title"><%= link_to quest.title, quest %></p>
+		<table>
+			<tr class="quest-info-row">
+				<td class="quest-date-label">Start:</td>
+				<td><%= quest.start %></td>
+			</tr>
+			<tr class="quest-info-row">
+				<td class="quest-date-label">End:</td>
+				<td><%= quest.end %></td>
+			</tr>
+			<tr class="quest-info-row">
+				<td class="quest-date-label">Status:</td>
+				<td>
+					<% if Date.today >= quest.start && Date.today <= quest.end %>
+						Active
+					<% elsif Date.today < quest.start %>
+						Upcoming
+					<% elsif Date.today > quest.end %>
+						Completed
+					<% end %>
+				</td>
+			</tr>
+			<tr class="quest-info-row">
+				<td class="quest-date-label">Description:</td>
+				<td><%= truncate(quest.description, :length => 80) %></td>
+			</tr>
+		</table>
+	</div>
+	<div class="clear"></div>
+
+</div>

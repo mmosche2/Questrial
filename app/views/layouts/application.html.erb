@@ -4,12 +4,14 @@
   <title>Questrial</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="head_body_wrapper">
 
-	<div class="header_header"></div>
+<!-- to add the extra white space at the top
+	<div class="header_header"></div> -->
 
 <!------------ HEADER ---------------->	
     <div id="Header">
@@ -17,20 +19,24 @@
 			<%= link_to 'Questrial', "/home/index", :class => "questrial-title" %>
 		
 		<div id="top_navigation">
-			<%= link_to 'Find Your Quest', quests_path, :class => "nav_header" %>
-			<%= link_to 'Create Your Quest', new_quest_path, :class => "nav_header" %>
+		  <div class="userbox">
+			<%= link_to 'Find Your Quest', quests_path, :class => "nav_header red" %>
 			
+		  
 			<% if signed_in? %>
+				<%= link_to 'Create Your Quest', new_quest_path, :class => "nav_header" %>
 				<%= link_to 'My Profile', current_user, :class => "nav_header" %>
+				<%= link_to 'My Account', edit_user_path(current_user), :class => "nav_header" %>
 				<%= link_to 'Logout', signout_path, :method => :delete, :class => "nav_header" %>
 			<% else %>
 				<%= link_to 'Signup', signup_path, :class => "nav_header" %>
 				<%= link_to 'Login', signin_path, :class => "nav_header" %>
 			<% end %>
-
+		  </div>
+		  
 		</div>
-		
     </div>
+
 <!------------ END HEADER ---------------->	   
 <div class="body">
 	<% flash.each do |key, value| %>

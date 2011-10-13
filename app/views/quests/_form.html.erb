@@ -1,5 +1,5 @@
 <%= form_for(@quest, :html => { :multipart => true }) do |f| %>
-  <% if @quest.errors.any? %>
+ <!-- <% if @quest.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@quest.errors.count, "error") %> prohibited this quest from being saved:</h2>
 
@@ -9,7 +9,8 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> -->
+  <%= render 'shared/error_messages', :object => f.object %>
 
 
   

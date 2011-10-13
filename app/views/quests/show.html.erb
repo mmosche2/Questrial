@@ -22,7 +22,11 @@
 <div class="left_content">
 	<p id="notice"><%= notice %></p>
 	
-
+	<% if signed_in? %>
+		<h2>Share your thoughts</h2>
+		<%= render "comments/form" %>
+	<% end %>
+	
 	<h2>The Wall</h2>
 	<% if @quest.comments.exists? %>
 		<%= render @quest.comments %>
@@ -30,8 +34,7 @@
 		No comments yet...
 	<% end %>
 	 
-	<h2>Add a comment:</h2>
-	<%= render "comments/form" %>
+	
 	
 </div>
 
