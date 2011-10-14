@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def show
 	@user = User.find(params[:id])
 	@title = @user.name
+	@feed_items = @user.feed.paginate(:page => params[:page])
   end
   
   def update
@@ -47,16 +48,13 @@ class UsersController < ApplicationController
   end
   
   def destroy
-	user.find(params[:id]).destroy
+	@user = User.find(params[:id]).destroy
 	flash[:success] = "User deleted."
 	redirect_to users_path
   end
   
   private
   
-	def authenticate
-		deny_access unless signed_in?
-	end
 	
 	def correct_user
 		@user = User.find(params[:id])

@@ -18,7 +18,8 @@ class QuestsController < ApplicationController
   # GET /quests/1.json
   def show
     @quest = Quest.find(params[:id])
-
+	@comments = @quest.comments.paginate(:page => params[:page], :per_page => 5)
+	
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @quest }

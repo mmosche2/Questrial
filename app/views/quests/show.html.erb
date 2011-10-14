@@ -28,8 +28,12 @@
 	<% end %>
 	
 	<h2>The Wall</h2>
+	<p>Posts <%= @quest.comments.count %></p>
 	<% if @quest.comments.exists? %>
-		<%= render @quest.comments %>
+		<table class="comments">
+			<%= render @comments %>
+		</table>
+		<%= will_paginate @comments %>
 	<% else %>
 		No comments yet...
 	<% end %>

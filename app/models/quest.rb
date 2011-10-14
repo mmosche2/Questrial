@@ -1,6 +1,9 @@
 class Quest < ActiveRecord::Base
 	validates :title, :presence => true,
 					  :length => { :minimum => 5 }
+	validates :start, :presence => true
+	validates :end,   :presence => true
+	validates :description, :presence => true
 					  
 	has_many :comments, :dependent => :destroy
 	

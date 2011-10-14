@@ -1,3 +1,33 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.comments {
+	margin-top: 1em;
+	width: 420px;
+}
+table.comments tr{
+	height: 70px;
+}
+table.comments tr td.comment {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.comments tr td.comment span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666;
+  margin: 5px 0px 0px 5px;
+
+}
+table.comments tr td.comment span.body {
+  display: block;
+  font-size: 16px;
+}
+table.comments tr td.comment span.commenter {
+	font-size: 16px;
+	font-weight: bold;
+	color: #286B07;
+}

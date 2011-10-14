@@ -135,13 +135,12 @@ div.body{
 	clear:both;
 }
 .footer {
-    height: 40px;
-	background-color: #286B07;
-//	background: url("sunrise-gradient-bg.jpg") repeat 0 0 #9BADC4;
-	color: #BBBBBB;
+    height: 39px;
+	background-color: white;
+	color: #5A5A5A;
+	border-top: 1px solid #DEDEDE;
 }
 #bottom_navigation{
-	color:#BBBBBB;
 	padding: 10px 10px;
 	width:980px;
 	margin: 0 auto;
@@ -152,8 +151,12 @@ span.bottom_nav_header{
 }
 a.bottom_nav_header{
 	float: right;
-	color: #BBBBBB;
 	padding-right: 10%;
+	text-decoration: none;
+	color: #5a5a5a;
 }
+	a.bottom_nav_header:hover{
+		text-decoration:underline;
+	}
 
 /****** END FOOTER SECTION ******/
