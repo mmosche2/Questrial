@@ -1,0 +1,2 @@
+$("join_form").update("<%= escape_javascript(render('quests/unjoin')) %>")
+$("joiners").update('<%= "Number of Joiners: #{@quest.joiners.count}" %>')

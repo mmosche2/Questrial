@@ -1,35 +1,49 @@
-<div class="quest-listing">
-	<div class="quest-listing-opacity"></div>
-	<div class="quest-photo"> 
-		<%= link_to image_tag(quest.photo.url(:small)), quest %>
+<% @status = get_status(quest) %>
+
+<% if @status == "Active" %>
+	<div class="quest-listing active">
+<% elsif @status == "Upcoming" %>
+	<div class="quest-listing upcoming">
+<% else %>
+	<div class="quest-listing completed">
+<% end %>
+
+	<div class="quest-list-photo"> 
+		<%= link_to image_tag(quest.photo.url(:thumb)), quest %>
 	</div>
 	
-	<div class="quest-info list">
-		<p class="quest-title"><%= link_to quest.title, quest %></p>
+	<div class="joined-count">
+		<%= quest.joiners.count %>
+	</div>
+	
+	<div class="quest-list-info">
+		<p class="quest-list-title"><%= link_to quest.title, quest %></p>
 		<table>
-			<tr class="quest-info-row">
-				<td class="quest-date-label">Start:</td>
-				<td><%= quest.start %></td>
+		
+			<tr class="quest-info-row status">
+				<% length = (quest.end - quest.start).to_i %>
+				<% launchdays = (Date.today - quest.start).to_i %>
+				<% if @status == "Active" %>
+					<td>
+						<b>Active</b> - 
+						A <u><%= length %></u> day quest - 
+						Today is day <%= launchdays + 1 %>.
+					</td>
+				<% elsif @status == "Upcoming" %>
+					<td>
+						<b>Upcoming</b> - 
+						A <u><%= length %></u> day quest - 
+						Starts in <%= launchdays.abs %> days.
+					</td>
+				<% else %>
+					<td>
+						<b>Completed</b> - 
+						A <u><%= length %></u> day quest
+					</td>
+				<% end %>
 			</tr>
-			<tr class="quest-info-row">
-				<td class="quest-date-label">End:</td>
-				<td><%= quest.end %></td>
-			</tr>
-			<tr class="quest-info-row">
-				<td class="quest-date-label">Status:</td>
-				<td>
-					<% if Date.today >= quest.start && Date.today <= quest.end %>
-						Active
-					<% elsif Date.today < quest.start %>
-						Upcoming
-					<% elsif Date.today > quest.end %>
-						Completed
-					<% end %>
-				</td>
-			</tr>
-			<tr class="quest-info-row">
-				<td class="quest-date-label">Description:</td>
-				<td><%= truncate(quest.description, :length => 80) %></td>
+			<tr class="quest-info-row description">
+				<td><%= truncate(quest.description, :length => 200) %></td>
 			</tr>
 		</table>
 	</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111014045002) do
+ActiveRecord::Schema.define(:version => 20111014205514) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(:version => 20111014045002) do
   end
 
   add_index "comments", ["quest_id"], :name => "index_comments_on_quest_id"
+
+  create_table "experiences", :force => true do |t|
+    t.integer  "joiner_id"
+    t.integer  "joined_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "experiences", ["joined_id"], :name => "index_experiences_on_joined_id"
+  add_index "experiences", ["joiner_id", "joined_id"], :name => "index_experiences_on_joiner_id_and_joined_id", :unique => true
+  add_index "experiences", ["joiner_id"], :name => "index_experiences_on_joiner_id"
 
   create_table "quests", :force => true do |t|
     t.string   "title"

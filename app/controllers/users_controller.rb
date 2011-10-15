@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	
-	before_filter :authenticate, :only => [:index, :edit, :update]
+	before_filter :authenticate, :except => [:show, :new, :create]
 	before_filter :correct_user, :only => [:edit, :update]
 	before_filter :admin_user,	 :only => :destroy
 
@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   
   def show
 	@user = User.find(params[:id])
+	@quests = @user.joined.paginate(:page => params[:page])
 	@title = @user.name
 	@feed_items = @user.feed.paginate(:page => params[:page])
   end
@@ -51,6 +52,13 @@ class UsersController < ApplicationController
 	@user = User.find(params[:id]).destroy
 	flash[:success] = "User deleted."
 	redirect_to users_path
+  end
+  
+  def joined
+	@title = "Joined"
+	@user = User.find(params[:id])
+	@quests = @user.joined.paginate(:page => params[:page])
+	render 'show_joined'
   end
   
   private

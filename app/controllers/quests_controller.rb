@@ -1,14 +1,15 @@
 class QuestsController < ApplicationController
 
-  http_basic_authenticate_with :name => "quest", :password => "quest", :except => :index
+  before_filter :authenticate, :except => [:show, :new, :create, :index]
 
   # GET /quests
   # GET /quests.json
   def index
 	@title = "All quests"
-    @quests = Quest.paginate(:page => params[:page], :per_page => 5, :order => 'start')
-
-    respond_to do |format|
+    @quests = Quest.search(params[:search]).paginate(:page => params[:page], 
+													 :per_page => 5, 
+													 :order => 'start')
+	respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @quests }
     end
@@ -19,6 +20,7 @@ class QuestsController < ApplicationController
   def show
     @quest = Quest.find(params[:id])
 	@comments = @quest.comments.paginate(:page => params[:page], :per_page => 5)
+	@users = @quest.joiners.paginate(:page => params[:page])
 	
     respond_to do |format|
       format.html # show.html.erb
@@ -85,4 +87,14 @@ class QuestsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def joiners
+	@title = "Joiners"
+	@quest = Quest.find(params[:id])
+	@users = @quest.joiners.paginate(:page => params[:id])
+	render 'show_joiners'
+  end
+  
+	
+  
 end

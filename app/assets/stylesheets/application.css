@@ -85,6 +85,28 @@ div.body{
 //	background-color: #8FD26E;
 }
 
+div.left_content{
+	float: left;
+	padding:20px;
+	width: 460px;
+}
+	div.left_content.new_form{width:600px;}
+	div.left_content.index{}
+
+div.right_content{
+	float: left;
+	padding:20px;
+	width: 440px;
+}
+	div.right_content.new_form{width:300px;}
+	div.right_content.index{}
+	
+div.full_content{
+	float: left;
+	padding:20px;
+	width: 940px;
+}
+
 /*******************
 .error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
 .error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}

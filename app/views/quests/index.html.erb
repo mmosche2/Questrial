@@ -1,8 +1,13 @@
-<!-------------- LEFT CONTENT --------------->
-<div class="left_content index">
-
+<div class="full_content">
 	<h1>Find your Quest!</h1>
-
+	
+	<%= form_tag quests_path, :method => 'get' do %>
+	  <p>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", :name => nil %>
+	  </p>
+	<% end %>
+	
 	<%= will_paginate %>
 	
 	<div class="find-quests-box">
@@ -12,12 +17,9 @@
 	<%= will_paginate %>
 
 	<br />
-
-	<%= link_to 'New Quest', new_quest_path %>
 	
-</div>
-
-<!-------------- RIGHT CONTENT --------------->
-<div class="right_content">
-
+	<% if signed_in? %>
+		<%= link_to 'New Quest', new_quest_path %>
+	<% end %>
+	
 </div>

@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
 	validates_presence_of :password, :on => :create
 	
 	has_many :comments, :dependent => :destroy
+	has_many :experiences, 	:foreign_key => "joiner_id",
+							:dependent => :destroy
+	has_many :joined, :through => :experiences, :source => :joined
 	
 	validates  	:email,
 				:presence 	=> true,
@@ -16,6 +19,18 @@ class User < ActiveRecord::Base
 				
 	def feed
 		Comment.where("user_id = ?", id)
+	end
+	
+	def joined?(joined)
+		experiences.find_by_joined_id(joined)
+	end
+	
+	def join!(joined)
+		experiences.create!(:joined_id => joined.id)
+	end
+	
+	def unjoin!(joined)
+		experiences.find_by_joined_id(joined).destroy
 	end
 
 end

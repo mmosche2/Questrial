@@ -1,13 +1,28 @@
 <!-------------- LEFT CONTENT --------------->
-<div class="left_content new_form">
+<div class="left_content">
 
 	<h1>
 		<%= gravatar_for @user %>
 		<%= @user.name %>
 	</h1>
 	<%= render 'shared/feed' %>
+	
+	
+	
+	
 
 </div>
 <!-------------- RIGHT CONTENT --------------->
-<div class="right_content new_form">
+<div class="right_content">
+
+	<span id="joined" class="stat">
+		<%= @user.joined.count %> quests joined so far.
+	</span>
+
+</div>
+
+<div class="clear"></div>
+
+<div class="full_content">
+	<%= render 'show_joined' %>
 </div>

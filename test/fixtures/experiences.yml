@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  joiner_id: 1
+  joined_id: 1
+
+two:
+  joiner_id: 1
+  joined_id: 1
