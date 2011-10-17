@@ -5,22 +5,40 @@
 
 .login-box.home{
 	border: 2px solid #CCC;
-	background-color: #EEE;
+	background-color: #fff6bf;
 	padding: 10px;
-	width: 200px;
+	width: 410px;
 }
+.home-questrial{
+	font-size: 28px;
+	text-align:center;
+}
+.home-slogan{
+	font-size:20px;
+	text-align:center;
+}
+
+.home-sales-box{
+	border: 2px solid #CCC;
+	background-color: #e6efc2;
+	padding: 10px;
+}
+
 .quote{
-	padding: 0px 10px;
-	margin-top: 30px;
+	padding: 10px;
+	text-align: center;
+	font-style: italic;
+	border-top: 1px solid #fbe3e4;
+	border-bottom: 2px solid #fbe3e4;
 }
 .quote-text{
 	font-size: 20px;
-	line-height: 1.2;
-	margin-bottom: 0px;
+	line-height: 1.5;
+	margin: 0px;
 }
 .quote-author{
 	color: #999;
 	font-size: 14px;
-	margin-left: 10px;
+	margin:0px;
 }
 

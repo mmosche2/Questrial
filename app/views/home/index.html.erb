@@ -5,7 +5,8 @@
 	<% if !signed_in? %>
 		<%= render 'shared/loginform' %>
 	<% else %>
-		Welcome, <%= current_user.name %>!
+		<p class="home-questrial">Questrial</p>
+		<p class="home-slogan">Level up your life</p>
 	<% end %>
   </div>
   
@@ -36,7 +37,9 @@
 	</div>
 	
 </div>
+<div class="full_content">
   <div class="quote">
 	<p class="quote-text">"All life is an experiment. The more experiments you make the better."</p>
-	<p class="quote-author">Ralph Waldo Emerson</p>
+	<p class="quote-author">- Ralph Waldo Emerson</p>
   </div>
+</div>
