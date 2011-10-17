@@ -7,6 +7,7 @@ gem 'rails', '3.1.0'
 
 group :production do
   gem 'pg'
+  gem 'therubyracer', '~> 0.9.3.beta1'
 end
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
