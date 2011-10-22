@@ -79,13 +79,14 @@
 			</tr>
 			<tr class="quest-description">
 				<td class="quest-date-label">Description:</td>
-				<td><%= @quest.description %></td>
+				<td><%= @quest.description.html_safe %></td>
 			</tr>
 		</table>
 	</div>
 	<div class="clear"></div>
 
 	<%= render 'show_joiners' %>
+	
 	
 	
   </div>
