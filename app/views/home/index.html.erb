@@ -1,4 +1,4 @@
-<!-------------- LEFT CONTENT --------------->
+<!-------------- LEFT CONTENT 
 <div class="left_content index">
   
   <div class="login-box home">
@@ -14,7 +14,7 @@
 
 
 </div>
-<!-------------- RIGHT CONTENT --------------->
+<!-------------- RIGHT CONTENT 
 <div class="right_content">
 	
 	<div class="home-sales-box">
@@ -42,4 +42,33 @@
 	<p class="quote-text">"All life is an experiment. The more experiments you make the better."</p>
 	<p class="quote-author">- Ralph Waldo Emerson</p>
   </div>
+</div>
+--------------->
+
+<div class="full_content">
+
+  <div class="login-box home">
+	<div class="home-center">
+	<% if !signed_in? %>
+		<%= link_to 'Login', signin_path, :class => "home-button login" %>
+		<%= link_to 'Signup', signup_path, :class => "home-button signup" %>
+	<% else %>
+		<h1 class="home-welcome">Welcome, <%= current_user.name %> </h1>
+	<% end %>
+	</div>
+	
+	<div class="featured-quest-box">
+		<h1> Featured Experiments </h1>
+		<%= render @quests %>
+	</div>
+	
+
+
+  </div>
+  
+  	  <div class="quote">
+		<p class="quote-text">"All life is an experiment. The more experiments you make the better."</p>
+		<p class="quote-author">- Ralph Waldo Emerson</p>
+	  </div>
+
 </div>

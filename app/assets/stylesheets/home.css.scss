@@ -4,11 +4,39 @@
 
 
 .login-box.home{
-	border: 2px solid #CCC;
-	background-color: #fff6bf;
 	padding: 10px;
-	width: 410px;
+	text-align:center;
 }
+
+.home-button{
+	background: -moz-linear-gradient(center top , #DD4B39, #D14836) repeat scroll 0 0 #D14836;
+	border: 1px solid transparent;
+	color: #FFFFFF;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	text-transform: uppercase;
+	border-radius: 2px;
+	font-size: 11px;
+	text-decoration: none;
+	font-family: arial;
+	font-weight: bold;
+	height: 27px;
+	line-height: 27px;
+	min-width: 54px;
+	padding: 0 8px;
+	text-align: center;
+	display: inline-block;
+	margin: 5px 20px;
+}
+
+.home-button.login{}
+.home-button.signup{}
+
+.home-center{
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+}
+
 .home-questrial{
 	font-size: 28px;
 	text-align:center;
@@ -18,18 +46,26 @@
 	text-align:center;
 }
 
+
+
 .home-sales-box{
 	border: 2px solid #CCC;
 	background-color: #e6efc2;
 	padding: 10px;
 }
 
+.featured-quest-box{
+	border-top: 1px solid #FF5F00;
+	margin-top: 10px;
+	text-align: left;
+	line-height: 1;
+}
+
 .quote{
 	padding: 10px;
 	text-align: center;
 	font-style: italic;
-	border-top: 1px solid #fbe3e4;
-	border-bottom: 2px solid #fbe3e4;
+
 }
 .quote-text{
 	font-size: 20px;
