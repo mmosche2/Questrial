@@ -23,7 +23,7 @@ Questrial::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   # Do not compress assets -- 10/22 MODIFIED TO TRUE ***************
-  config.assets.compress = true
+  config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true
