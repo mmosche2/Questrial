@@ -15,9 +15,14 @@ class Quest < ActiveRecord::Base
 		:styles => { :thumb => "50x50#",
 					 :small => "100x100>",
 					 :original => "150x150>" },
-		:default_url => 'system/photos/missing_:style.png',
-        :url  => "/system/photos/:id/:style/:basename.:extension",
-        :path => ":rails_root/public/system/photos/:id/:style/:basename.:extension"
+		:default_url => 'photos/missing_:style.png',
+  #      :url  => "/system/photos/:id/:style/:basename.:extension",
+  #      :path => ":rails_root/public/system/photos/:id/:style/:basename.:extension"
+		:storage => :s3,
+		:s3_credentials => "config/s3.yml",
+		:path => ":attachment/:id/:style.:extension",
+		:bucket => 'questrial'
+
 				  
 	validates_attachment_size :photo, :less_than => 5.megabytes
 	validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']	

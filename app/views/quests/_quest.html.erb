@@ -43,8 +43,9 @@
 				<% end %>
 			</tr>
 			<tr class="quest-info-row description">
-				<td><%= truncate(quest.description.html_safe, :length => 200) %></td>
+				<td><%= truncate(quest.description.html_safe.gsub(/<\/?[^>]*>/, ""), :length => 200) %></td>
 			</tr>
+
 		</table>
 	</div>
 	<div class="clear"></div>
