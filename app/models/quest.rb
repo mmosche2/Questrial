@@ -19,7 +19,7 @@ class Quest < ActiveRecord::Base
   #      :url  => "/system/photos/:id/:style/:basename.:extension",
   #      :path => ":rails_root/public/system/photos/:id/:style/:basename.:extension"
 		:storage => :s3,
-		:s3_credentials => "config/s3.yml",
+		:s3_credentials => "#{Rails.root}/config/s3.yml",
 		:path => ":attachment/:id/:style.:extension"
 
 
