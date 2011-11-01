@@ -1,3 +1,14 @@
-access_key_id: AKIAJIHZF22PKDQMYDQQ
-secret_access_key: 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
-bucket: questrial
+development:
+  access_key_id: AKIAJIHZF22PKDQMYDQQ
+  secret_access_key: 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
+  bucket: questrial-dev
+  
+test:
+  access_key_id: AKIAJIHZF22PKDQMYDQQ
+  secret_access_key: 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
+  bucket: questrial-test
+  
+Production:
+  access_key_id: ENV['S3_KEY']
+  secret_access_key: ENV['S3_SECRET']
+  bucket: ENV['S3_BUCKET']

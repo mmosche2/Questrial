@@ -20,8 +20,8 @@ class Quest < ActiveRecord::Base
   #      :path => ":rails_root/public/system/photos/:id/:style/:basename.:extension"
 		:storage => :s3,
 		:s3_credentials => "config/s3.yml",
-		:path => ":attachment/:id/:style.:extension",
-		:bucket => 'questrial'
+		:path => ":attachment/:id/:style.:extension"
+
 
 				  
 	validates_attachment_size :photo, :less_than => 5.megabytes
