@@ -5,9 +5,15 @@
 		<%= gravatar_for @user %>
 		<%= @user.name %>
 	</h1>
-	<span id="joined" class="stat">
-		You've joined <%= @user.joined.count %> quests!
-	</span>
+	<% if @user.joined %>
+		<span id="joined" class="stat">
+			You've joined <%= @user.joined.count %> quests!
+		</span>
+	<% else %>
+		<span id="joined" class="stat">
+			You haven't joined a quest yet...
+		</span>
+	<% end %>
 	
 	<!-------------- MY QUESTS --------------->
 	<div class="myquests-list-box">
