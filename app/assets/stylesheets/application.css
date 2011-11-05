@@ -114,6 +114,7 @@ div.left_content{
 }
 	div.left_content.new_form{width:600px;}
 	div.left_content.index{}
+	div.left_content.profile{width:540px;}
 
 div.right_content{
 	float: left;
@@ -122,6 +123,7 @@ div.right_content{
 }
 	div.right_content.new_form{width:300px;}
 	div.right_content.index{}
+	div.right_content.profile{width:360px;}
 	
 div.full_content{
 	float: left;

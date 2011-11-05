@@ -3,31 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 table.comments {
-	margin-top: 1em;
 	width: 420px;
 }
+	table.comments.profile{width: 360px;}
+	
 table.comments tr{
-	height: 70px;
+	height: 60px;
 }
-table.comments tr td.comment {
-  border-top: 1px solid #ccc;
+table.comments tr.comment td{
+  border-bottom: 1px solid #CCC;
   vertical-align: top;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
-table.comments tr td.comment span.timestamp {
-  display: block;
+table.comments tr.comment td span.timestamp {
   font-size: 85%;
   color: #666;
-  margin: 5px 0px 0px 5px;
-
+  float: right;
 }
-table.comments tr td.comment span.body {
+table.comments tr.comment td span.body {
   display: block;
   font-size: 16px;
 }
-table.comments tr td.comment span.commenter {
+table.comments tr.comment td span.commenter {
 	font-size: 16px;
 	font-weight: bold;
 	color: #286B07;
+}
+p.comment_destroy{
+	float:right;
+	margin:0px;
 }

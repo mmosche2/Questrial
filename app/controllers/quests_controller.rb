@@ -21,6 +21,9 @@ class QuestsController < ApplicationController
     @quest = Quest.find(params[:id])
 	@comments = @quest.comments.paginate(:page => params[:page], :per_page => 5)
 	@users = @quest.joiners.paginate(:page => params[:page])
+	@status = get_status(@quest)
+	@length = (@quest.end - @quest.start).to_i + 1
+	launchdays = (Date.today - @quest.start).to_i
 	
     respond_to do |format|
       format.html # show.html.erb

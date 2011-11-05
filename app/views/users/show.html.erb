@@ -1,28 +1,65 @@
 <!-------------- LEFT CONTENT --------------->
-<div class="left_content">
+<div class="left_content profile">
 
-	<h1>
+	<h1 class="user-info">
 		<%= gravatar_for @user %>
 		<%= @user.name %>
 	</h1>
-	<%= render 'shared/feed' %>
+	<span id="joined" class="stat">
+		You've joined <%= @user.joined.count %> quests!
+	</span>
 	
-	
-	
-	
+	<!-------------- MY QUESTS --------------->
+	<div class="myquests-list-box">
 
+		<h2 class="myquests-list-label">Active</h2>
+		<div class="myquests-list">
+			<% @active_quests.each do |myquest| %>
+				<%= render :partial => "quests/myquest", :locals => {:myquest => myquest} %>
+			<% end %>
+
+		</div>
+		<div class="clear"></div>
+		<%= will_paginate @active_quests %>
+	</div>
+	<div class="clear"></div>
+	<div class="myquests-list-box">
+		<h2 class="myquests-list-label">Upcoming</h2>
+		<div class="myquests-list">
+			<% @upcoming_quests.each do |myquest| %>
+				<%= render :partial => "quests/myquest", :locals => {:myquest => myquest} %>
+			<% end %>
+		</div>
+		<div class="clear"></div>
+		<%= will_paginate @upcoming_quests %>
+	</div>
+	<div class="clear"></div>
+	<div class="myquests-list-box">
+		<h2 class="myquests-list-label">Completed</h2>
+		<div class="myquests-list">
+			<% @completed_quests.each do |myquest| %>
+				<%= render :partial => "quests/myquest", :locals => {:myquest => myquest} %>
+			<% end %>
+		</div>
+		<div class="clear"></div>
+		<%= will_paginate @completed_quests%>
+	</div>
+	<div class="clear"></div>
 </div>
 <!-------------- RIGHT CONTENT --------------->
-<div class="right_content">
+<div class="right_content profile">
 
-	<span id="joined" class="stat">
-		<%= @user.joined.count %> quests joined so far.
-	</span>
+
+  <div class="comments-box-form">
+	<div class="comment-wall-header">
+		<h2 id="CommentWall">The Wall</h2>
+		<span class="comment-count">Posts <%= @user.comments.count %></span>
+	</div>
+	
+	<%= render 'shared/feed' %>
+  </div>
 
 </div>
 
-<div class="clear"></div>
 
-<div class="full_content">
-	<%= render 'show_joined' %>
-</div>
+

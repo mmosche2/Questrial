@@ -1,4 +1,7 @@
 <% @status = get_status(quest) %>
+<% length = (quest.end - quest.start).to_i + 1 %>
+<% launchdays = (Date.today - quest.start).to_i %>
+
 
 <% if @status == "Active" %>
 	<div class="quest-listing active">
@@ -21,8 +24,6 @@
 		<table>
 		
 			<tr class="quest-info-row status">
-				<% length = (quest.end - quest.start).to_i %>
-				<% launchdays = (Date.today - quest.start).to_i %>
 				<% if @status == "Active" %>
 					<td>
 						<b>Active</b> - 

@@ -3,6 +3,7 @@
 	<div class="quest-photo"> 
 		<%= image_tag @quest.photo.url(:original) %>
 	</div>
+	
 
 	<div class="this-quest-title-box">
 		<p class="this-quest-title"><%= @quest.title %></p>
@@ -11,8 +12,24 @@
 		<%= link_to 'Edit', edit_quest_path(@quest), :class => "this-quest-cmd" %> 
 		<%= link_to 'Destroy', @quest, confirm: 'Are you sure?', method: :delete, :class => "this-quest-cmd" %>
 		--------------->
+	
+		<div class="quest-info">
+			<table>
+				<tr class="quest-start">
+					<td class="quest-date-label">Start:</td>
+					<td><%= @quest.start %></td>
+				</tr>
+				<tr class="quest-end">
+					<td class="quest-date-label">End:</td>
+					<td><%= @quest.end %></td>
+				</tr>
+				<tr class="quest-description">
+					<td class="quest-date-label">Description:</td>
+					<td><%= @quest.description.html_safe %></td>
+				</tr>
+			</table>
+		</div>
 	</div>
-
 	
 	<% if Date.today > @quest.end %>
 	<% else %>
@@ -25,25 +42,39 @@
 
 <!-------------- LEFT CONTENT --------------->
 <div class="left_content">
-	<p id="notice"><%= notice %></p>
-	
+
+  
+  <p id="notice"><%= notice %></p>
+   
+  <div class="comments-with-top-box">
+
 	<% if signed_in? %>
-		<h2>Share your thoughts</h2>
-		<%= render "comments/form" %>
+		
+		<h2 class="this-quest-title-label">Share your thoughts</h2>
+		
+		<div class="comments-box-form">
+			<%= render "comments/form" %>
+		</div>
+
 	<% end %>
+
+	<div class="comments-full-box">
+	  <div class="comment-wall-header">
+		<h2 id="CommentWall">The Wall</h2>
+		<span class="comment-count">Posts <%= @quest.comments.count %></span>
+	  </div>
+		<% if @quest.comments.exists? %>
+			<table class="comments">
+				<%= render @comments %>
+			</table>
+			<%= will_paginate @comments %>
+		<% else %>
+			No comments yet...
+		<% end %>
 	
-	<h2>The Wall</h2>
-	<p>Posts <%= @quest.comments.count %></p>
-	<% if @quest.comments.exists? %>
-		<table class="comments">
-			<%= render @comments %>
-		</table>
-		<%= will_paginate @comments %>
-	<% else %>
-		No comments yet...
-	<% end %>
+	</div>
 	 
-	
+  </div>	
 	
 </div>
 
@@ -52,6 +83,10 @@
   <div class="this-quest-box">
 
 	<div class="this-quest-stats">
+	
+		<h2 class="this-quest-title-label">Quest Stats</h2>
+	
+	<!----
 		<h1 class="quest-stat">
 			<span id="joiners" class="stat">
 				Number of Joiners: <%= @quest.joiners.count %>
@@ -65,29 +100,62 @@
 		<% elsif Date.today > @quest.end %>
 			<h1 class="quest-stat completed"><span></span>Completed</h1>
 		<% end %>
-	</div>
-	
-	<div class="quest-info">
-		<table>
-			<tr class="quest-start">
-				<td class="quest-date-label">Start:</td>
-				<td><%= @quest.start %></td>
-			</tr>
-			<tr class="quest-end">
-				<td class="quest-date-label">End:</td>
-				<td><%= @quest.end %></td>
-			</tr>
-			<tr class="quest-description">
-				<td class="quest-date-label">Description:</td>
-				<td><%= @quest.description.html_safe %></td>
-			</tr>
-		</table>
-	</div>
-	<div class="clear"></div>
+	--->
+		
 
-	<%= render 'show_joiners' %>
+		<% if @status == "Active" %>
+			<div class="myquest-stat big day green">
+				<p class="myquest-stat-label big"> Today</p>
+				<span class="myquest-stat-value big"><%= launchdays + 1 %></span>
+			</div>
+		<% elsif @status == "Upcoming" %>
+			<div class="myquest-stat big day yellow">
+				<p class="myquest-stat-label big"> Starts in </p>
+				<span class="myquest-stat-value big"><%= launchdays.abs %></span>
+			</div>
+		<% else %>
+			<div class="myquest-stat big day grey">
+				<p class="myquest-stat-label big"> Done </p>
+				<span class="myquest-stat-value big">0</span>
+			</div>
+		<% end %>
+			
+		<div class="myquest-stat big length">
+			<p class="myquest-stat-label big"> Length </p>
+			<span class="myquest-stat-value big"><%= @length %></span>
+		</div>
+			
+				
+		<div class="myquest-stat big joiners">
+			<p class="myquest-stat-label big"> Joiners </p>
+			<span class="myquest-stat-value big"><%= @quest.joiners.count %></span>
+		</div>
+		
+		
+	</div>
 	
+	<div class="clear"></div>
+<!---------- INCLUDE SHARING OPTIONS ---------->
+	<div class="this-quest-share">
+		<h2 class="this-quest-title-label">Share this Quest</h2>
+
+		<!-- AddThis Button BEGIN -->
+		<div class="addthis_toolbox addthis_default_style ">
+		<a class="addthis_button_preferred_1"></a>
+		<a class="addthis_button_preferred_2"></a>
+		<a class="addthis_button_preferred_3"></a>
+		<a class="addthis_button_preferred_4"></a>
+		<a class="addthis_button_compact"></a>
+		<a class="addthis_counter addthis_bubble_style"></a>
+		</div>
+		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4eab9ca16c3f982f"></script>
+		<!-- AddThis Button END -->
+	</div>
 	
+	<div class="this-quest-users">
+		<h2 class="this-quest-title-label">Users</h2>
+		<%= render 'show_joiners' %>
+	</div>
 	
   </div>
 </div>

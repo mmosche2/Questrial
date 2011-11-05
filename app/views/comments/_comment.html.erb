@@ -1,11 +1,17 @@
-<tr>
-	<td class="comment">
-		<span class="commenter"> <%= comment.commenter %> </span>
-		<span class="body"><%= comment.body.html_safe %></span>
-	
+<tr class="comment">
+	<td>
+		<span class="commenter"> 
+			<% if comment.user_id %>
+				<%= link_to comment.commenter, User.find(comment.user_id) %>
+			<% else %>
+				<%= comment.commenter %>
+			<% end %>
+		</span>
 		<span class="timestamp">
 			Posted <%= time_ago_in_words(comment.created_at) %> ago.
 		</span>
+		<span class="body"><%= comment.body.html_safe %></span>
+	
 		
 		<% if current_user?(comment.user) %>
 			<p class="comment_destroy">

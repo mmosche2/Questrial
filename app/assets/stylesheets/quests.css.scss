@@ -12,9 +12,9 @@ td.fieldlabel{
 }
 	
 .this-quest-top{
-	padding:20px;
+	padding:20px 20px 0px 20px;
 	height: 150px;
-	width: 980px;
+	width: 940px;
 }
 .join-button{
 	float:right;
@@ -23,8 +23,8 @@ td.fieldlabel{
 }
 p.this-quest-title{
 	font-size: 30px;
-	margin-top:50px;
 	font-weight: bold;
+	margin:0px 0px 0px 20px;
 }
 
 .this-quest-box{
@@ -33,8 +33,7 @@ div.quest-photo{
 	float:left;
 }
 .this-quest-title-box{
-	float:left;
-	margin-left:20px;
+	float: left;
 }
 h1.quest-stat{
 //	font: bold 300%/110% "Lucida Grande";
@@ -53,11 +52,13 @@ h1.quest-stat span{
 .this-quest-cmd{
 }
 div.quest-info{
-	float:left;
-	margin-left: 10px;
+	margin: 10px;
 }
 	div.quest-info td{font-family: helvetica;}
 
+#join_form{
+	float: right;
+}
 
 p.quest-title{
 	font-size: 20px;
@@ -73,6 +74,30 @@ p.quest-title{
 }
 .quest-description{
 	width: 100%;
+}
+
+h2.this-quest-title-label{
+	font-family: corbel;
+	font-size: 30px; 
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 0px;
+}
+div.this-quest-stats{
+	width: 400px;
+	height: 200px;
+}
+
+div.addthis_toolbox.addthis_default_style{
+	margin-bottom: 30px;
+}
+div.this-quest-share{
+	border-top: 2px solid #8FD26E;
+	padding-top: 20px;
+}
+div.this-quest-users{
+	border-top: 2px solid #8FD26E;
+	padding-top: 20px;
 }
 
 /****** NEW QUEST ******/
@@ -92,7 +117,31 @@ p.rule{
 
 /****** COMMENTS ******/
 
+.comment-wall-header{
+	padding:10px 0px;
+	border-bottom: 3px solid #aaa;
+}
+#CommentWall{
+	display: inline;
+	margin:0px;
+}
+span.comment-count{
+	float:right;
+}
 
+div.comments-full-box{
+	background: #EEEEEE;
+	padding: 10px;
+	border: 3px solid rgba(200, 200, 200, 0.3);
+}
+div.comments-box-form{
+
+}
+
+
+div.comments-with-top-box{
+	width: 440px;
+}
 
 
 div.clear{clear:both;}
