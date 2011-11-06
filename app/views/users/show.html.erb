@@ -1,10 +1,14 @@
-<!-------------- LEFT CONTENT --------------->
-<div class="left_content profile">
-
+<!-------------- FULL CONTENT - TOP --------------->
+<div class="full_content">
 	<h1 class="user-info">
 		<%= gravatar_for @user %>
 		<%= @user.name %>
 	</h1>
+</div>
+<!-------------- LEFT CONTENT --------------->
+<div class="left_content profile">
+
+
 	<% if @user.joined %>
 		<span id="joined" class="stat">
 			You've joined <%= @user.joined.count %> quests!
@@ -56,9 +60,9 @@
 <div class="right_content profile">
 
 
-  <div class="comments-box-form">
+  <div class="comments-full-box">
 	<div class="comment-wall-header">
-		<h2 id="CommentWall">The Wall</h2>
+		<h2 id="CommentWall">Recent Comments</h2>
 		<span class="comment-count">Posts <%= @user.comments.count %></span>
 	</div>
 	

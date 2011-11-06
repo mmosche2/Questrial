@@ -13,8 +13,8 @@ td.fieldlabel{
 	
 .this-quest-top{
 	padding:20px 20px 0px 20px;
-	height: 150px;
 	width: 940px;
+	min-height: 190px;
 }
 .join-button{
 	float:right;
@@ -31,9 +31,10 @@ p.this-quest-title{
 }
 div.quest-photo{
 	float:left;
+	margin: 20px 20px 0px 0px;
 }
 .this-quest-title-box{
-	float: left;
+
 }
 h1.quest-stat{
 //	font: bold 300%/110% "Lucida Grande";

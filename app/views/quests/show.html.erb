@@ -4,6 +4,10 @@
 		<%= image_tag @quest.photo.url(:original) %>
 	</div>
 	
+	<% if Date.today > @quest.enddate %>
+	<% else %>
+		<%= render 'join_form' if signed_in? %>
+	<% end %>
 
 	<div class="this-quest-title-box">
 		<p class="this-quest-title"><%= @quest.title %></p>
@@ -31,12 +35,7 @@
 		</div>
 	</div>
 	
-	<% if Date.today > @quest.enddate %>
-	<% else %>
-	
-		<%= render 'join_form' if signed_in? %>
 
-		<% end %>
 	
 </div>
 

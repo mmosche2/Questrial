@@ -1,17 +1,24 @@
 <tr class="comment">
+<!--
   <td class="gravatar">
     <%= link_to gravatar_for(feed_item.user), feed_item.user %>
   </td>
-  
+-->  
   <td>
-    <span class="commenter">
-      <%= link_to feed_item.user.name, feed_item.user %>
-    </span>
-	
-	<span class="timestamp">
+  	<span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
 	
+	<p class="feed-quest">
+		<%= link_to feed_item.quest.title, feed_item.quest %>
+    </p>
+	<span class="commenter feed">
+      by <%= link_to feed_item.user.name, feed_item.user %>
+    </span>
+	
+	
+	
+
     <span class="body"><%= feed_item.body.html_safe %></span>
 	
 

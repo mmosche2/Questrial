@@ -5,7 +5,7 @@
 table.comments {
 	width: 420px;
 }
-	table.comments.profile{width: 360px;}
+	table.comments.profile{width: 335px;}
 	
 table.comments tr{
 	height: 60px;
@@ -24,12 +24,27 @@ table.comments tr.comment td span.timestamp {
 table.comments tr.comment td span.body {
   display: block;
   font-size: 16px;
+  margin-top: 5px;
 }
-table.comments tr.comment td span.commenter {
+span.commenter {
 	font-size: 16px;
 	font-weight: bold;
 	color: #286B07;
 }
+	span.commenter.feed, span.commenter.feed a{
+		font-size: 12px;
+		text-decoration: none;
+	}
+	span.commenter.feed a:hover{text-decoration:underline;}
+	
+p.feed-quest, p.feed-quest a{
+	font-size: 14px;
+	margin:0px;
+	text-decoration: none;
+	color: #3B5998;
+	font-weight: bold;
+}
+	p.feed-quest a:hover{text-decoration: underline;}
 p.comment_destroy{
 	float:right;
 	margin:0px;
