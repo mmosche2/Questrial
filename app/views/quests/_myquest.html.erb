@@ -1,5 +1,5 @@
 <% @status = get_status(myquest) %>
-<% length = (myquest.end - myquest.start).to_i + 1 %>
+<% length = (myquest.enddate - myquest.start).to_i + 1 %>
 <% launchdays = (Date.today - myquest.start).to_i %>
 
  <div class="myquest-box">

@@ -1,5 +1,5 @@
 <% @status = get_status(quest) %>
-<% length = (quest.end - quest.start).to_i + 1 %>
+<% length = (quest.enddate - quest.start).to_i + 1 %>
 <% launchdays = (Date.today - quest.start).to_i %>
 
 

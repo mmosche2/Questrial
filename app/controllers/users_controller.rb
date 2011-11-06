@@ -28,11 +28,11 @@ class UsersController < ApplicationController
   
   def show
 	@user = User.find(params[:id])
-	@active_quests = @user.joined.where("start <= ? AND end >= ?", Date.today, Date.today).order("start ASC").paginate(
+	@active_quests = @user.joined.where("start <= ? AND enddate >= ?", Date.today, Date.today).order("start ASC").paginate(
 											:page => params[:page], :per_page => 3, :order => 'start')
 	@upcoming_quests = @user.joined.where("start > ?", Date.today).order("start ASC").paginate(
 											:page => params[:page], :per_page => 3, :order => 'start')
-	@completed_quests = @user.joined.where("end < ?", Date.today).order("start ASC").paginate(
+	@completed_quests = @user.joined.where("enddate < ?", Date.today).order("start ASC").paginate(
 											:page => params[:page], :per_page => 3, :order => 'start')
 	@title = @user.name
 	@feed_items = @user.feed.paginate(:page => params[:page])
