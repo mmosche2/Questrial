@@ -40,6 +40,7 @@
     <td class="fieldlabel"><%= f.label :description %><br />
     <td><%= f.text_area :description, :size => "50x10" %>
   </tr>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <tr class="actions">
     <td><%= f.submit %></td>
   </tr>

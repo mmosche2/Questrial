@@ -2,8 +2,12 @@
 <% length = (myquest.enddate - myquest.start).to_i + 1 %>
 <% launchdays = (Date.today - myquest.start).to_i %>
 
- <div class="myquest-box">
-  
+<% if myquest.user_id == userid %>
+  <div class="myquest-box creator">
+<% else %>
+  <div class="myquest-box">
+<% end %>
+
 	<p class="myquest-list-title"><%= link_to truncate(myquest.title, :length => 25), myquest %></p>
 	
 	<div class="myquest-list-photo"> 

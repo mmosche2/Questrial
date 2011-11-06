@@ -4,7 +4,7 @@
 		<%= image_tag @quest.photo.url(:original) %>
 	</div>
 	
-	<% if Date.today > @quest.enddate %>
+	<% if (Date.today > @quest.enddate) || (@creator == current_user) %>
 	<% else %>
 		<%= render 'join_form' if signed_in? %>
 	<% end %>
@@ -27,6 +27,12 @@
 					<td class="quest-date-label">End:</td>
 					<td><%= @quest.enddate %></td>
 				</tr>
+				<% if @creator %>
+					<tr class="quest-end">
+						<td class="quest-date-label"><%= gravatar_for @creator, :size => 30 %></td>
+						<td><%= link_to @creator.name, @creator %></td>
+					</tr>
+				<% end %>
 				<tr class="quest-description">
 					<td class="quest-date-label">Description:</td>
 					<td><%= @quest.description.html_safe %></td>
@@ -41,9 +47,6 @@
 
 <!-------------- LEFT CONTENT --------------->
 <div class="left_content">
-
-  
-  <p id="notice"><%= notice %></p>
    
   <div class="comments-with-top-box">
 
@@ -153,6 +156,7 @@
 	
 	<div class="this-quest-users">
 		<h2 class="this-quest-title-label">Users</h2>
+		
 		<%= render 'show_joiners' %>
 	</div>
 	

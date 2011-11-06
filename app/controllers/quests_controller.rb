@@ -24,6 +24,7 @@ class QuestsController < ApplicationController
 	@status = get_status(@quest)
 	@length = (@quest.enddate - @quest.start).to_i + 1
 	launchdays = (Date.today - @quest.start).to_i
+	@creator = @quest.user_id ? User.find(@quest.user_id) : User.find(1)
 	
     respond_to do |format|
       format.html # show.html.erb
@@ -54,6 +55,7 @@ class QuestsController < ApplicationController
 
     respond_to do |format|
       if @quest.save
+		current_user.join!(@quest)
         format.html { redirect_to @quest, notice: 'Quest was successfully created.' }
         format.json { render json: @quest, status: :created, location: @quest }
       else

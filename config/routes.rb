@@ -12,6 +12,7 @@ Questrial::Application.routes.draw do
 	end
   end
   resources :users do
+	resources :quests
 	member do
 		get :joined
 	end

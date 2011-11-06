@@ -2,7 +2,7 @@ class Quest < ActiveRecord::Base
 	validates :title, :presence => true,
 					  :length => { :minimum => 5 }
 	validates :start, :presence => true
-	validates :end,   :presence => true
+	validates :enddate,   :presence => true
 	validates :description, :presence => true
 					  
 	has_many :comments, :dependent => :destroy
@@ -10,6 +10,7 @@ class Quest < ActiveRecord::Base
 									:class_name => "Experience",
 									:dependent => :destroy
 	has_many :joiners, :through => :reverse_experiences, :source => :joiner
+	has_one :user
 	
 	has_attached_file :photo,
 		:styles => { :thumb => "50x50#",

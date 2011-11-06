@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	has_many :experiences, 	:foreign_key => "joiner_id",
 							:dependent => :destroy
 	has_many :joined, :through => :experiences, :source => :joined
+	has_many :quests
 	
 	validates  	:email,
 				:presence 	=> true,

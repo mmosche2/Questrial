@@ -25,7 +25,7 @@
 		<h2 class="myquests-list-label">Active</h2>
 		<div class="myquests-list">
 			<% @active_quests.each do |myquest| %>
-				<%= render :partial => "quests/myquest", :locals => {:myquest => myquest} %>
+				<%= render :partial => "quests/myquest", :locals => {:myquest => myquest, :userid => @user.id} %>
 			<% end %>
 
 		</div>
@@ -37,7 +37,7 @@
 		<h2 class="myquests-list-label">Upcoming</h2>
 		<div class="myquests-list">
 			<% @upcoming_quests.each do |myquest| %>
-				<%= render :partial => "quests/myquest", :locals => {:myquest => myquest} %>
+				<%= render :partial => "quests/myquest", :locals => {:myquest => myquest, :userid => @user.id} %>
 			<% end %>
 		</div>
 		<div class="clear"></div>
@@ -48,7 +48,7 @@
 		<h2 class="myquests-list-label">Completed</h2>
 		<div class="myquests-list">
 			<% @completed_quests.each do |myquest| %>
-				<%= render :partial => "quests/myquest", :locals => {:myquest => myquest} %>
+				<%= render :partial => "quests/myquest", :locals => {:myquest => myquest, :userid => @user.id} %>
 			<% end %>
 		</div>
 		<div class="clear"></div>
