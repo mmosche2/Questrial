@@ -1,5 +1,8 @@
-	
-	<% if current_user.joined?(@quest) %>
+	<% if (Date.today > @quest.enddate) %>
+		<div class="join_form complete">
+			<p class="join-form-label"> This quest is completed and can no longer be joined. </p>
+		</div>
+	<% elsif current_user.joined?(@quest) %>
 		<div class="join_form unjoin">
 			<%= render 'unjoin' %>
 		</div>
