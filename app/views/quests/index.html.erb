@@ -7,15 +7,38 @@
 		<%= submit_tag "Search", :name => nil %>
 	  </p>
 	<% end %>
-	
-	<%= will_paginate %>
-	
-	<div class="find-quests-box">
-		<%= render @quests %>
+		
+	<div class="quests-list-box">
+		<h2 class="myquests-list-label">Upcoming</h2>
+		<div class="find-quests-box">
+				<%= render @upcoming_quests %>
+		</div>
+		<div class="clear"></div>
+		<%= will_paginate @upcoming_quests, :param_name => :upage %>
 	</div>
+	<div class="clear"></div>
 	
-	<%= will_paginate %>
-
+	<div class="quests-list-box">
+		<h2 class="myquests-list-label">Active</h2>
+		<div class="find-quests-box">
+				<%= render @active_quests %>
+		</div>
+		<div class="clear"></div>
+		<%= will_paginate @active_quests, :param_name => :apage %>
+	</div>
+	<div class="clear"></div>
+	
+	<div class="quests-list-box">
+		<h2 class="myquests-list-label">Completed</h2>
+		<div class="find-quests-box">
+				<%= render @completed_quests %>
+		</div>
+		<div class="clear"></div>
+		<%= will_paginate @completed_quests, :param_name => :cpage %>
+	</div>
+	<div class="clear"></div>
+	
+	
 	<br />
 	
 	<% if signed_in? %>

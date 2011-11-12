@@ -30,7 +30,7 @@
 
 		</div>
 		<div class="clear"></div>
-		<%= will_paginate @active_quests %>
+		<%= will_paginate @active_quests, :param_name => :apage %>
 	</div>
 	<div class="clear"></div>
 	<div class="myquests-list-box">
@@ -41,7 +41,7 @@
 			<% end %>
 		</div>
 		<div class="clear"></div>
-		<%= will_paginate @upcoming_quests %>
+		<%= will_paginate @upcoming_quests, :param_name => :upage %>
 	</div>
 	<div class="clear"></div>
 	<div class="myquests-list-box">
@@ -52,7 +52,7 @@
 			<% end %>
 		</div>
 		<div class="clear"></div>
-		<%= will_paginate @completed_quests%>
+		<%= will_paginate @completed_quests, :param_name => :cpage %>
 	</div>
 	<div class="clear"></div>
 </div>

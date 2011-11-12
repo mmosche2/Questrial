@@ -31,7 +31,7 @@ span#joined{
 	width: 540px;
 }
 .myquest-box{
-	width: 120px;
+	width: 130px;
 	height: 140px;
 	float:left;
 	padding: 2px;
@@ -81,12 +81,15 @@ span#joined{
 div.myquest-stat{
 	width: 30px;
 	float:left;
-	border: 3px solid rgba(200, 200, 200, 0.3);
+	border: 2px solid rgba(100, 100, 100, 0.3);
 	font-family: helvetica;
 	font-weight: bold;
 	font-size: 14px;
-	margin: 1px;
+	margin-right: 5px;
+	padding: 2px;
 	opacity: .7;
+	text-align: center;
+
 }
 	.myquest-stat.joiners{background-color:#FFbF00;}
 	.myquest-stat.length{background-color:#E0FFFF;}
@@ -101,10 +104,27 @@ div.myquest-stat{
 		margin: 0px 10px 20px 10px;
 		font-size: 32px;
 		text-align: center;
+		border: 3px solid rgba(100, 100, 100, 0.3);
+
+	}
+	
+	//This is used in the quest index (search) page
+	.myquest-stat.small{
+		height: 40px;
+		text-align: center;
+		margin-left: 5px;
+		margin-right: 0px;
+		padding: 2px;
+		border: 2px solid rgba(100, 100, 100, 0.3);
+
 	}
 
 .myquest-stat-label{
 	font-size: 9px;
+	text-align: left;
+	border-bottom: solid 1px;
+
+
 }
 	.myquest-stat-label.big{
 		font-size:20px;
@@ -113,6 +133,13 @@ div.myquest-stat{
 		margin: 5px 5px 30px 5px;
 		text-align: left;
 	}
+	.myquest-stat-label.small{
+		border-bottom: solid 1px;
+		padding-bottom: 2px;
+		text-align: left;
+		margin: 5px 0px;
+	}
+
 
 .myquest-stat-value{
 

@@ -15,39 +15,41 @@
 		<%= link_to image_tag(quest.photo.url(:thumb)), quest %>
 	</div>
 	
-	<div class="joined-count">
-		<%= quest.joiners.count %>
+	<div class="joined-count">	
+	
+		<% if @status == "Active" %>
+			<div class="myquest-stat small day green">
+				<p class="myquest-stat-label small"> Day </p>
+				<%= launchdays + 1 %>
+			</div>
+		<% elsif @status == "Upcoming" %>
+			<div class="myquest-stat small day yellow">
+				<p class="myquest-stat-label small"> In </p>
+				<%= launchdays.abs %>
+			</div>
+		<% else %>
+			<div class="myquest-stat small day grey">
+				<p class="myquest-stat-label small"> Done </p>
+				0
+			</div>
+		<% end %>
+				
+		<div class="myquest-stat small length">
+			<p class="myquest-stat-label small"> Length </p>
+			<%= length %>
+		</div>		
+		
+		<div class="myquest-stat small joiners">
+			<p class="myquest-stat-label small"> Joins </p>
+			<%= quest.joiners.count %>
+		</div>
 	</div>
+	
 	
 	<div class="quest-list-info">
 		<p class="quest-list-title"><%= link_to quest.title, quest %></p>
-		<table>
-		
-			<tr class="quest-info-row status">
-				<% if @status == "Active" %>
-					<td>
-						<b>Active</b> - 
-						A <u><%= length %></u> day quest - 
-						Today is day <%= launchdays + 1 %>.
-					</td>
-				<% elsif @status == "Upcoming" %>
-					<td>
-						<b>Upcoming</b> - 
-						A <u><%= length %></u> day quest - 
-						Starts in <%= launchdays.abs %> days.
-					</td>
-				<% else %>
-					<td>
-						<b>Completed</b> - 
-						A <u><%= length %></u> day quest
-					</td>
-				<% end %>
-			</tr>
-			<tr class="quest-info-row description">
-				<td><%= truncate(quest.description.html_safe.gsub(/<\/?[^>]*>/, ""), :length => 200) %></td>
-			</tr>
-
-		</table>
+		<%= truncate(quest.description.html_safe.gsub(/<\/?[^>]*>/, ""), :length => 200) %>
+	
 	</div>
 	<div class="clear"></div>
 

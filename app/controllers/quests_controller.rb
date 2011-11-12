@@ -6,9 +6,14 @@ class QuestsController < ApplicationController
   # GET /quests.json
   def index
 	@title = "All quests"
-    @quests = Quest.search(params[:search]).paginate(:page => params[:page], 
-													 :per_page => 5, 
-													 :order => 'start')
+	
+	@active_quests = Quest.search(params[:search]).where("start <= ? AND enddate >= ?", Date.today, Date.today).order("start ASC").paginate(
+											:page => params[:apage], :per_page => 5, :order => 'start')
+	@upcoming_quests = Quest.search(params[:search]).where("start > ?", Date.today).order("start ASC").paginate(
+											:page => params[:upage], :per_page => 5, :order => 'start')
+	@completed_quests = Quest.search(params[:search]).where("enddate < ?", Date.today).order("start ASC").paginate(
+											:page => params[:cpage], :per_page => 5, :order => 'start')
+											
 	respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @quests }

@@ -155,8 +155,9 @@ div.clear{clear:both;}
 
 .quest-listing{
 	padding:5px;
-	border: 1px solid #BBBBBB;
+	border: 2px solid rgba(200,200,200,.5);
 	margin: 10px 0px;
+	border-radius: 5px;
 }
 .quest-listing.active{background-color:#fff6bf;}
 .quest-listing.upcoming{background:#e6efc2;}
@@ -184,8 +185,8 @@ p.quest-list-title a{
 .quest-list-info{
 	float:left;
 	margin-left:10px;
-	width: 820px;
-	border-right: 2px solid #BBB;
+	max-width: 730px;
+	min-height: 53px;
 }
 	
 tr.quest-info-row.status td{
@@ -198,6 +199,5 @@ tr.quest-info-row.description td{
 div.joined-count{
 	float:right;
 	padding:2px;
-	font-size: 18px;
-	font-family: helvetica;
+	border-left: 2px solid #BBBBBB;
 }
