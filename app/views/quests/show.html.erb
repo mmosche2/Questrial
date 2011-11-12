@@ -12,10 +12,7 @@
 	<div class="this-quest-title-box">
 		<p class="this-quest-title"><%= @quest.title %></p>
 		
-		<!-------------- ONLY SHOW THIS IF YOU ARE THE CREATOR
-		<%= link_to 'Edit', edit_quest_path(@quest), :class => "this-quest-cmd" %> 
-		<%= link_to 'Destroy', @quest, confirm: 'Are you sure?', method: :delete, :class => "this-quest-cmd" %>
-		--------------->
+		
 	
 		<div class="quest-info">
 			<table>
@@ -39,6 +36,12 @@
 				</tr>
 			</table>
 		</div>
+		
+		<% if (@creator == current_user) %>
+			<%= link_to 'Edit', edit_quest_path(@quest), :class => "this-quest-cmd" %> 
+			<%= link_to 'Destroy', @quest, confirm: 'Are you sure?', method: :delete, :class => "this-quest-cmd" %>
+		<% end %>
+		
 	</div>
 	
 

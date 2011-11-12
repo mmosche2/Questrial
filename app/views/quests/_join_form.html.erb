@@ -1,8 +1,13 @@
-	<div id="join_form">
-		<% if current_user.joined?(@quest) %>
+	
+	<% if current_user.joined?(@quest) %>
+		<div class="join_form unjoin">
 			<%= render 'unjoin' %>
-		<% else %>
+		</div>
+	<% else %>
+		<div class="join_form join">
+			<p class="join-form-label"> Ready to join the quest? </p>
 			<%= render 'join' %>
-		<% end %>
-	</div>
+		</div>
+	<% end %>
+	
 
