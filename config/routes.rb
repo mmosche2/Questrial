@@ -19,6 +19,7 @@ Questrial::Application.routes.draw do
   end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :experiences, :only => [:create, :destroy]
+  resources :categories
   
   match '/signup', 	:to => 'users#new'
   match '/signin', 	:to => 'sessions#new'

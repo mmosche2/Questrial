@@ -1,0 +1,13 @@
+<%= form_for @category do |cat| %>  
+
+	<%= render 'shared/error_messages', :object => cat.object %>
+
+	<div class="field">  
+		<%= cat.label :name %>  <br />
+		<%= cat.text_field :name %>  
+	</div>  	  
+
+	<div class="actions">
+		<%= cat.submit "Add" %>
+	</div>  
+<% end %>  

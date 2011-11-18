@@ -8,6 +8,13 @@ module SessionsHelper
 	def authenticate
 		deny_access unless signed_in?
 	end
+	
+	def admin_user
+		if !current_user.admin?
+			flash[:notice] = "Only Admins can access that feature"
+			redirect_to(root_path)
+		end
+	end
   
   def current_user?(user)
 	user == current_user
