@@ -2,7 +2,7 @@ Questrial::Application.routes.draw do
  
   get "pages/contact"
   get "pages/faq"
-  get "pages/privacy"
+  get "pages/about"
   get "home/index"
 
   resources :quests do
@@ -25,7 +25,7 @@ Questrial::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   match '/contact', :to => 'pages#contact'
   match '/faq', 	:to => 'pages#faq'
-  match '/privacy', :to => 'pages#privacy'
+  match '/about', :to => 'pages#about'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

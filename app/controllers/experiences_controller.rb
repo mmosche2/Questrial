@@ -4,6 +4,7 @@ class ExperiencesController < ApplicationController
 	def create
 		@quest = Quest.find(params[:experience][:joined_id])
 		current_user.join!(@quest)
+
 		respond_to do |format|
 			format.html { redirect_to @quest }
 			format.js

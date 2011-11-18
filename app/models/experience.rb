@@ -1,5 +1,5 @@
 class Experience < ActiveRecord::Base
-	attr_accessible :joined_id
+	attr_accessible :joined_id, :startdate, :enddate
 	
 	belongs_to :joiner, :class_name => "User"
 	belongs_to :joined, :class_name => "Quest"

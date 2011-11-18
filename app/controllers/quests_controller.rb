@@ -28,7 +28,7 @@ class QuestsController < ApplicationController
 	@users = @quest.joiners.paginate(:page => params[:page])
 	@status = get_status(@quest)
 	@length = (@quest.enddate - @quest.start).to_i + 1
-	launchdays = (Date.today - @quest.start).to_i
+	@launchdays = (Date.today - @quest.start).to_i
 	@creator = @quest.user_id ? User.find(@quest.user_id) : User.find(1)
 	
     respond_to do |format|
