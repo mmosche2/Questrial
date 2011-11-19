@@ -3,6 +3,9 @@
 	<h1 class="user-info">
 		<%= gravatar_for @user %>
 		<%= @user.name %>
+		<% if @user.admin? %>
+			<span class="admin-badge">Admin</span>
+		<% end %>
 	</h1>
 </div>
 <!-------------- LEFT CONTENT --------------->
