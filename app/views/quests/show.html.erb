@@ -1,42 +1,45 @@
 <div class="this-quest-top">
 
-	<div class="quest-photo"> 
-		<%= image_tag @quest.photo.url(:original) %>
-	</div>
+	
 	
 	<%= render 'join_form' if signed_in? %>
 
 	<div class="this-quest-title-box">
-		<p class="this-quest-title"><%= @quest.title %></p>
-		
-		<div class="quest-info">
-			<table>
-				<tr class="quest-start">
-					<td class="quest-date-label">Start:</td>
-					<td><%= @quest.start %></td>
-				</tr>
-				<tr class="quest-end">
-					<td class="quest-date-label">End:</td>
-					<td><%= @quest.enddate %></td>
-				</tr>
-				<% if @creator %>
-					<tr class="quest-end">
-						<td class="quest-date-label"><%= gravatar_for @creator, :size => 30 %></td>
-						<td><%= link_to @creator.name, @creator %></td>
-					</tr>
-				<% end %>
-				<tr class="quest-description">
-					<td class="quest-date-label">Description:</td>
-					<td><%= @quest.description.html_safe %></td>
-				</tr>
-			</table>
+		<div class="this-quest-title-top-box">
+			<div class="quest-photo"> 
+				<%= image_tag @quest.photo.url(:original) %>
+			</div>
+			<div class="this-quest-title-text-box">
+				<p class="this-quest-title"><%= @quest.title %></p>
+				<p class="this-quest-category"><%= @category.name %> Quest</p>
+				<div class="this-quest-creator-box">
+					<p class="this-quest-creator">
+						Created by: <%= gravatar_for @creator, :size => 30 %> <%= link_to @creator.name, @creator %>
+					</p>
+				</div>
+				<div class="this-quest-range-box">
+					<p class="this-quest-range">
+						Period: <%= @quest.start.to_formatted_s(:long_ordinal) %> 
+						- <%= @quest.enddate.to_formatted_s(:long_ordinal) %> (<%= @length %> days)
+					</p>
+				</div>
+				<div class="this-quest-edit-box">
+					<% if (@creator == current_user) %>
+						<p class="this-quest-edit">
+							<%= link_to 'Edit', edit_quest_path(@quest), :class => "this-quest-cmd" %> 
+							<%= link_to 'Destroy', @quest, confirm: 'Are you sure?', method: :delete, :class => "this-quest-cmd" %>
+						</p>
+					<% end %>
+				</div>
+			</div>
 		</div>
-		
-		<% if (@creator == current_user) %>
-			<%= link_to 'Edit', edit_quest_path(@quest), :class => "this-quest-cmd" %> 
-			<%= link_to 'Destroy', @quest, confirm: 'Are you sure?', method: :delete, :class => "this-quest-cmd" %>
-		<% end %>
-		
+
+		<div class="this-quest-description-box">
+			<p class="this-quest-description">
+				<%= @quest.description.html_safe %>
+			</p>
+		</div>
+
 	</div>
 	
 

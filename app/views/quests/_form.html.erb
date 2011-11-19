@@ -14,6 +14,10 @@
     <td class="fieldlabel"><%= f.label :end %>
     <td><%= f.date_select :enddate %>
   </tr>
+  <tr class="field">
+    <td class="fieldlabel"><%= f.label :category %>
+    <td><%= f.select :category_id, @categories %>
+  </tr>
   
   <% if @quest.photo? %>
 	<%= image_tag @quest.photo.url(:small) %>

@@ -45,11 +45,18 @@
 		</div>
 	</div>
 	
-	
 	<div class="quest-list-info">
+		<% if quest.category.nil? %>
+			<p class="quest-list-category">Miscellaneous</p>
+		<% else %>
+			<p class="quest-list-category"><%= quest.category.name %></p>
+		<% end %>
+		
 		<p class="quest-list-title"><%= link_to quest.title, quest %></p>
-		<%= truncate(quest.description.html_safe.gsub(/<\/?[^>]*>/, ""), :length => 200) %>
-	
+		
+		<p class="quest-list-description">
+			<%= truncate(quest.description.html_safe.gsub(/<\/?[^>]*>/, ""), :length => 200) %>
+		</p>
 	</div>
 	<div class="clear"></div>
 

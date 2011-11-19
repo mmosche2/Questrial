@@ -13,7 +13,7 @@ class QuestsController < ApplicationController
 											:page => params[:upage], :per_page => 5, :order => 'start')
 	@completed_quests = Quest.search(params[:search]).where("enddate < ?", Date.today).order("start ASC").paginate(
 											:page => params[:cpage], :per_page => 5, :order => 'start')
-											
+	
 	respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @quests }
@@ -30,6 +30,7 @@ class QuestsController < ApplicationController
 	@length = (@quest.enddate - @quest.start).to_i + 1
 	@launchdays = (Date.today - @quest.start).to_i
 	@creator = @quest.user_id ? User.find(@quest.user_id) : User.find(1)
+	@category = @quest.category_id ? Category.find(@quest.category_id) : Category.find(1)
 	
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +42,7 @@ class QuestsController < ApplicationController
   # GET /quests/new.json
   def new
     @quest = Quest.new
+	@categories = find_all_categories
 
     respond_to do |format|
       format.html # new.html.erb
@@ -51,6 +53,7 @@ class QuestsController < ApplicationController
   # GET /quests/1/edit
   def edit
     @quest = Quest.find(params[:id])
+	@categories = find_all_categories
   end
 
   # POST /quests
@@ -105,6 +108,11 @@ class QuestsController < ApplicationController
 	render 'show_joiners'
   end
   
+  private
+	
+	def find_all_categories
+		Category.find(:all, :order => "name").map{|c|[c.name,c.id]}
+	end
 	
   
 end

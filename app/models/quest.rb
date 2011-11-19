@@ -11,7 +11,7 @@ class Quest < ActiveRecord::Base
 									:dependent => :destroy
 	has_many :joiners, :through => :reverse_experiences, :source => :joiner
 	has_one :user
-	has_one :category
+	belongs_to :category
 	
 	has_attached_file :photo,
 		:styles => { :thumb => "50x50#",

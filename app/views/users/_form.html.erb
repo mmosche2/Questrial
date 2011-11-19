@@ -11,6 +11,11 @@
 		<%= f.text_field :email %>  
 	</div>  
 	<div class="field">  
+		<%= f.label :admin %>  <br />
+		True: <%= radio_button("user", "admin", true) %>
+		False: <%= radio_button("user", "admin", false) %>
+	</div>  
+	<div class="field">  
 		<%= f.label :password %>  <br />
 		<%= f.password_field :password %>  
 	</div>  
