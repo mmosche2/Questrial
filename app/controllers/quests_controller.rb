@@ -6,13 +6,31 @@ class QuestsController < ApplicationController
   # GET /quests.json
   def index
 	@title = "All quests"
+	@categories = find_all_categories
 	
-	@active_quests = Quest.search(params[:search]).where("start <= ? AND enddate >= ?", Date.today, Date.today).order("start ASC").paginate(
+	@active_quests = Quest.where("start <= ? AND enddate >= ?", Date.today, Date.today).order("start ASC").paginate(
 											:page => params[:apage], :per_page => 5, :order => 'start')
-	@upcoming_quests = Quest.search(params[:search]).where("start > ?", Date.today).order("start ASC").paginate(
+	@upcoming_quests = Quest.where("start > ?", Date.today).order("start ASC").paginate(
 											:page => params[:upage], :per_page => 5, :order => 'start')
-	@completed_quests = Quest.search(params[:search]).where("enddate < ?", Date.today).order("start ASC").paginate(
+	@completed_quests = Quest.where("enddate < ?", Date.today).order("start ASC").paginate(
 											:page => params[:cpage], :per_page => 5, :order => 'start')
+	
+	
+	if (!params[:search].blank?)
+		@active_quests = @active_quests.search(params[:search])
+		@upcoming_quests = @upcoming_quests.search(params[:search])
+		@completed_quests = @completed_quests.search(params[:search])
+	end
+	
+	if (!params[:quest].blank?)
+		if (!params[:quest][:category].blank?)
+			@selected_category = params[:quest][:category]
+			@active_quests = @active_quests.search_by_category(@selected_category)
+			@upcoming_quests = @upcoming_quests.search_by_category(@selected_category)
+			@completed_quests = @completed_quests.search_by_category(@selected_category)
+		end
+	end
+	
 	
 	respond_to do |format|
       format.html # index.html.erb

@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 	@completed_quests = @user.joined.where("enddate < ?", Date.today).order("start ASC").paginate(
 											:page => params[:cpage], :per_page => 3, :order => 'start')
 	@title = @user.name
-	@feed_items = @user.feed.paginate(:page => params[:page], :per_page => 10)
+	@feed_items = @user.feed.paginate(:page => params[:page], :per_page => 10).limit(20)
   end
   
   def update

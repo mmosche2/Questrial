@@ -3,11 +3,12 @@
 	
 	<%= form_tag quests_path, :method => 'get' do %>
 	  <p>
-		<%= text_field_tag :search, params[:search] %>
+		Search: <%= text_field_tag :search, params[:search] %>
+		Category: <%= select("quest", "category", @categories, :selected => @selected_category, :include_blank => 'all' ) %>
 		<%= submit_tag "Search", :name => nil %>
 	  </p>
 	<% end %>
-		
+
 	<div class="quests-list-box">
 		<h2 class="myquests-list-label">Upcoming</h2>
 		<div class="find-quests-box">
@@ -39,10 +40,5 @@
 	<div class="clear"></div>
 	
 	
-	<br />
-	
-	<% if signed_in? %>
-		<%= link_to 'New Quest', new_quest_path %>
-	<% end %>
 	
 </div>

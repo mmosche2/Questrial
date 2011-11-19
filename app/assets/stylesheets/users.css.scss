@@ -42,7 +42,7 @@ span#joined{
 	height: 140px;
 	float:left;
 	padding: 2px;
-	margin: 5px;
+	margin: 10px;
 	border: 3px solid #9A9A9A;
 	background: #FDFDFD;
 	text-align: center;
@@ -59,6 +59,7 @@ span#joined{
 }
 	.myquest-box-stats p{margin:0px;}
 	
+	
 .myquest-list-title{
 	height: 40px;
 	margin: 0px;
@@ -74,7 +75,20 @@ span#joined{
 		text-shadow: #bbb 0px 0px 3px;
 	}
 
-	
+.myquest-list-category-box{
+	position: absolute;
+	font-size: 10px;
+	left: -15px;
+	top: -16px;
+	opacity: 0.8;
+	background: lightBlue;
+	border: 1px solid black;
+	border-radius: 30px;
+	padding: 0px 2px;
+}
+.myquest-list-category{
+	margin:0px;
+}	
 
 .myquest-list-photo{
 	margin: 0px;

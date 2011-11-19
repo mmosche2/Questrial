@@ -4,19 +4,19 @@
   <table>
   <tr class="field">
     <td class="fieldlabel"><%= f.label :title %></td>
-    <td><%= f.text_field :title %>
+    <td><%= f.text_field :title %></td>
   </tr>
   <tr class="field">
-    <td class="fieldlabel"><%= f.label :start %>
-    <td><%= f.date_select :start %>
+    <td class="fieldlabel"><%= f.label :start %></td>
+    <td><%= f.date_select :start %></td>
   </tr>
   <tr class="field">
-    <td class="fieldlabel"><%= f.label :end %>
-    <td><%= f.date_select :enddate %>
+    <td class="fieldlabel"><%= f.label :end %></td>
+    <td><%= f.date_select :enddate %></td>
   </tr>
   <tr class="field">
-    <td class="fieldlabel"><%= f.label :category %>
-    <td><%= f.select :category_id, @categories %>
+    <td class="fieldlabel"><%= f.label :category %></td>
+    <td><%= f.select :category_id, @categories %></td>
   </tr>
   
   <% if @quest.photo? %>
@@ -24,12 +24,12 @@
   <% end %>
   
   <tr class="field">
-	<td class="fieldlabel"><%= f.label 'Attach Picture' %>
-	<td><%= f.file_field :photo %>
+	<td class="fieldlabel"><%= f.label 'Attach Picture' %></td>
+	<td><%= f.file_field :photo %></td>
   </tr>
   <tr class="field">
-    <td class="fieldlabel"><%= f.label :description %><br />
-    <td><%= f.text_area :description, :size => "50x10" %>
+    <td class="fieldlabel"><%= f.label :description %></td><br />
+    <td><%= f.text_area :description, :size => "50x10" %></td>
   </tr>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <tr class="actions">

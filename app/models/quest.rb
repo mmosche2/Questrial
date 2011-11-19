@@ -31,12 +31,33 @@ class Quest < ActiveRecord::Base
 	
 
 	
+	def self.search(search, catID)
+	  if (search.blank?) and (catID.blank?)
+		where '(title LIKE ? OR description LIKE ?) AND category_id = ?', "%#{search}%", 
+				"%#{search}%", "#{catID}"
+	  elsif (search != "")
+		where 'title LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%"
+	  elsif (catID != "")
+		where 'category_id = ?', "#{catID}"
+	  else
+		scoped
+	  end
+	end
+	
 	def self.search(search)
-	  if search
+	  if (search != "")
 		where 'title LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%"
 	  else
 		scoped
 	  end
 	end
 
+	def self.search_by_category(catID)
+	  if catID 
+		where 'category_id = ?', "#{catID}"
+	  else
+		scoped
+	  end
+	end
+	
 end

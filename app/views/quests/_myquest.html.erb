@@ -8,6 +8,14 @@
   <div class="myquest-box">
 <% end %>
 
+	<div class="myquest-list-category-box">
+		<% if myquest.category.nil? %>
+			<p class="myquest-list-category">Miscellaneous</p>
+		<% else %>
+			<p class="myquest-list-category"><%= myquest.category.name %></p>
+		<% end %>
+	</div>
+
 	<p class="myquest-list-title"><%= link_to truncate(myquest.title, :length => 25), myquest %></p>
 	
 	<div class="myquest-list-photo"> 
