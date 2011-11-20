@@ -176,6 +176,9 @@ li.rule{
 	color: #5a5a5a;
 	padding-bottom: 10px;
 }
+td.nicEdit-form-field{
+	background: white;
+}
 
 /****** COMMENTS ******/
 
@@ -210,6 +213,17 @@ div.clear{clear:both;}
 
 /****** ALL QUESTS LISTING ******/
 
+.quests-search-instructions{
+	float:right;
+	font-family:georgia,serif;
+    font-style:italic;
+    color:#3E2F2F;
+    letter-spacing:0;
+    line-height:1.429em;
+    padding:0;
+	margin: 20px 100px 0px 0px;
+	font-size: 20px;
+}
 .find-quests-box{
 	line-height: 1;
 }
@@ -217,12 +231,16 @@ div.clear{clear:both;}
 .quest-listing{
 	padding:5px;
 	border: 2px solid rgba(200,200,200,.5);
-	margin: 10px 0px;
+	margin: 20px 0px;
 	border-radius: 5px;
 }
 .quest-listing.active{background-color:#fff6bf;}
 .quest-listing.upcoming{background:#e6efc2;}
 .quest-listing.completed{background-color:#fbe3e4;}
+
+.quest-listing.featured{
+
+}
 
 .quest-list-photo{
 	float:left;
@@ -239,10 +257,29 @@ p.quest-list-category{
 	font-size: 12px;
 	text-decoration: underline;
 }
+	p.quest-list-category.featured{
+		margin:0px;
+		text-decoration: none;
+		float: none;
+	}
+	div.quest-list-category.featured{
+		position: absolute;
+		font-size: 10px;
+		margin-left: -15px;
+		margin-top: -17px;
+		opacity: 0.8;
+		background: lightBlue;
+		border: 1px solid black;
+		border-radius: 30px;
+		padding: 2px;
+	}
 p.quest-list-description{
 	margin:0px;
 }
-
+	p.quest-list-description.featured{
+		margin-top: 5px;
+	}
+	
 p.quest-list-title a{
 	color:#286B07;
 	text-decoration: none;
@@ -259,6 +296,9 @@ p.quest-list-title a{
 	width: 725px;
 	min-height: 53px;
 }
+	.quest-list-info.featured{
+		width: 230px;
+	}
 	
 tr.quest-info-row.status td{
 	font-family: helvetica;

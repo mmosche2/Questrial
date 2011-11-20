@@ -1,9 +1,9 @@
 <!-------------- LEFT CONTENT --------------->
 <div class="left_content new_form">
 
-	<h1>Edit user</h1>
+	<h1>Edit My Account</h1>
 
-	<%= render 'form' %>
+	<%= render 'form', :form_type => "edit" %>
 
 	<div>
 	  <%= gravatar_for @user %>

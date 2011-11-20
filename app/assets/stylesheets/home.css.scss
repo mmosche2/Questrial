@@ -5,28 +5,62 @@
 .home-page-text{
 	font-size: 24px;
 	float: left;
-	width: 650px;
+	width: 460px;
+}
+.home-page-text.featured{
+	width: 940px;
+	border-bottom: 1px solid #DDD;
+	padding-bottom: 5px;
 }
 .home-page-text-welcome{
-	font-weight: bold;
-	margin:0px;
-	margin-bottom: 20px;
-	font-size: 24px;
+	font-family:Baskerville,Times,'Times New Roman',serif;
+    font-size: 35px;
+    color:#589017;
+    font-variant:small-caps;
+    text-align:center;
+    font-weight:bold;
+	line-height: 1.2;
+	margin: 0px;
+	margin-top: 20px;
+}
+
+.home-page-text-box{
+	font-family:georgia,serif;
+    font-style:italic;
+    color:#3E2F2F;
+    letter-spacing:0;
+    line-height:1.429em;
+    padding:0;
+	margin: 0px;
+	font-size: 20px;
 }
 .home-page-text-select{
 	margin:5px 0px;
 }
 .home-page-text-gather{
+	margin: 5px 10px;
+}
+.home-page-text-grow{
 	margin: 5px 20px;
 }
+.home-page-subtext{
+	font-size: 14px;
+	margin: 0px;
+}
 .home-page-text-start{
-	margin: 5px 40px;
+	font-family:georgia,serif;font-size:18px;
+    color:#3E2F2F;
+    letter-spacing:0;
+    line-height:1.429em;
+    padding:0;
+	font-size: 24px;
 }
 .login-box.home{
 	text-align:center;
-	float: right;
+	float: left;
 	width: 200px;
-	padding: 10px 30px;
+	border: 10px solid rgba(200, 200, 200, 0.5);
+	background: #DDDDDD;
 }
 
 .home-button{
@@ -48,38 +82,16 @@
 	display: inline-block;
 	margin: 5px 20px;
 }
+.featured-box{
 
-.home-button.login{}
-.home-button.signup{}
-
-.home-center{
-	margin-left: auto;
-	margin-right: auto;
-	padding-bottom: 20px;
 }
-
-.home-questrial{
-	font-size: 28px;
-	text-align:center;
-}
-.home-slogan{
-	font-size:20px;
-	text-align:center;
-}
-
-
-
-.home-sales-box{
-	border: 2px solid #CCC;
-	background-color: #e6efc2;
-	padding: 10px;
-}
-
 .featured-quest-box{
-	border-top: 1px solid #FF5F00;
-	margin-top: 10px;
 	text-align: left;
 	line-height: 1;
+}
+
+h1.featured-quest-box-text{
+	margin: 0px;
 }
 
 .quote{

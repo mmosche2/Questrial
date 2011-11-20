@@ -1,12 +1,25 @@
 <!-------------- LEFT CONTENT --------------->
-<div class="left_content new_form">
-
-    <h1>Sign Up</h1>  
-      
-	<%= render 'form' %>
+<div class="left_content">
+	<div class="signup-form-box">
+		<h1>Sign Up</h1>  
+	
+		<%= render 'form', :form_type => "new" %>
+	</div>
 	
 </div>
 
 <!-------------- RIGHT CONTENT --------------->
-<div class="right_content new_form">
+<div class="right_content">
+	<div class="signup-instructions">
+		<p> Are you hell-bent on improving yourself?</p>
+		
+		<p> So are we! </p>
+		<p> Prepare to join a community of people just like you.  Here are some of the benefits you'll enjoy.</p>
+		<ol>
+			<li>Boost your life with self-improvement quests</li>
+			<li>Share your passions with people just like you</li>
+			<li>Gain new experiences</li>
+			<li>Earn life points for completing quests</li>
+		</ol>
+	</div>
 </div>

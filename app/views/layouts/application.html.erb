@@ -26,34 +26,41 @@
   </script>
 </head>
 <body>
+
+<!------------ HEADER ---------------->	
+    <div id="Header">
+		<div class="header-body-box">
+			<%= link_to 'Questrial', "/home/index", :class => "questrial-title" %>
+			
+			<div id="top_navigation">
+			  <div class="userbox">
+				<%= link_to 'Join', quests_path, :class => "nav_header red" %>
+				
+			  
+				<% if signed_in? %>
+					<%= link_to 'Create', new_quest_path, :class => "nav_header" %>
+					<%= link_to 'My Quests', current_user, :class => "nav_header" %>
+					<%= link_to 'My Account', edit_user_path(current_user), :class => "nav_header" %>
+					<%= link_to 'Logout', signout_path, :method => :delete, :class => "nav_header" %>
+				<% else %>
+					<%= link_to 'Signup', signup_path, :class => "nav_header" %>
+					<%= link_to 'Login', signin_path, :class => "nav_header" %>
+				<% end %>
+			  </div>
+			  
+			</div>
+		</div>
+    </div>
+<!------------ END HEADER ---------------->
+
 <div class="head_body_wrapper">
 
 <!-- to add the extra white space at the top
 	<div class="header_header"></div> -->
 
-<!------------ HEADER ---------------->	
-    <div id="Header">
+<!------------ HEADER HOLDER ---------------->	
+    <div id="Header-holder">
 		
-			<%= link_to 'Questrial', "/home/index", :class => "experimentable-title" %>
-			<span><%= link_to '', "/home/index", :class => "experimentable-title able" %></span>
-		
-		<div id="top_navigation">
-		  <div class="userbox">
-			<%= link_to 'Join', quests_path, :class => "nav_header red" %>
-			
-		  
-			<% if signed_in? %>
-				<%= link_to 'Create', new_quest_path, :class => "nav_header" %>
-				<%= link_to 'My Quests', current_user, :class => "nav_header" %>
-				<%= link_to 'My Account', edit_user_path(current_user), :class => "nav_header" %>
-				<%= link_to 'Logout', signout_path, :method => :delete, :class => "nav_header" %>
-			<% else %>
-				<%= link_to 'Signup', signup_path, :class => "nav_header" %>
-				<%= link_to 'Login', signin_path, :class => "nav_header" %>
-			<% end %>
-		  </div>
-		  
-		</div>
     </div>
 <!------------ END HEADER ---------------->	   
 <div class="body">

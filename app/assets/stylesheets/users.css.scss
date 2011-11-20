@@ -11,7 +11,7 @@ ul.users {
 }
 
 h1.user-info{
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 }
 
 .admin-badge{
@@ -168,3 +168,17 @@ div.myquest-stat{
 	.myquest-stat-value.big{
 		margin: 0px;
 	}
+
+	
+	
+/*** NEW/EDIT FORM **/
+
+.change-password-text{
+	font-size: 1.6em;
+}
+.signup-form-box{
+	margin-left: 0px;
+}
+.signup-instructions{
+	margin-left: -200px;
+}

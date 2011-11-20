@@ -1,41 +1,69 @@
-<div class="full_content">
+
+<div class="home_top_content">
+	<div class="home-page-text featured">
+		<p class="home-page-text-welcome">
+			Welcome to Questrial, <br /> your home for self-improvement.
+		</p>
+	</div>
+</div>
+
+<!-------------- LEFT CONTENT --------------->
+<div class="left_content">
 
   <div class="home-page-text">
-	<p class="home-page-text-welcome">
-		Welcome to Questrial, your place to expand your experiences.
-	</p>
-	<div class="home-page-text-box">
-		<p class="home-page-text-select">
-			Select your obstacle,
-		</p>
-		<p class="home-page-text-gather">
-			gather some friends,
-		</p>
-		<p class="home-page-text-start">
-			and start your Quest.
-	</p>
-	</div>
+
+	<ul class="home-page-text-box">
+		<li class="home-page-text-select">
+			Plan your mission - 
+			<span class="home-page-subtext">What is your goal?</span>
+		</li>
+		<li class="home-page-text-gather">
+			Gather your friends - 
+			<span class="home-page-subtext">Who will share your journey?</span>
+		</li>
+		<li class="home-page-text-grow">
+			Embark on your Quest - 
+			<span class="home-page-subtext">How much can you grow?</span>
+		</li>
+	</ul>
+	
   </div>
 
+  <% if !signed_in? %>
+  <p class="home-page-text-start">
+		Ready to become a better you?
+	</p>
   <div class="login-box home">
 	<div class="home-center">
-	<% if !signed_in? %>
+	
 		<%= render 'shared/loginform' %>
-	<% else %>
-		<h1 class="home-welcome">Welcome, <%= current_user.name %> </h1>
-	<% end %>
+	
 	</div>
   </div>
-  
-  <div class="clear"> </div>
+  <% else %>
+
+  <% end %>
 	
+  <div class="clear"> </div>
+
+</div>
+
+<!-------------- RIGHT CONTENT --------------->
+<div class="right_content">
+  
   <div class="featured-box">	
 	<div class="featured-quest-box">
-		<h1> Featured Quests </h1>
-		<%= render @quests %>
+		<h1 class="featured-quest-box-text"> Featured Quests </h1>
+		<% @quests.each do |quest| %>
+			<%= render :partial => "quests/featured_quest", :locals => {:quest => quest} %>
+		<% end %>
 	</div>
 
   </div>
+
+</div>
+<div class="full_content">
+
   
   	  <div class="quote">
 		<p class="quote-text">"All life is an experiment. The more experiments you make the better."</p>

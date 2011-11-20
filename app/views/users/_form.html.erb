@@ -10,6 +10,9 @@
 		<%= f.label :email %>  <br />
 		<%= f.text_field :email %>  
 	</div>  
+	<% if (form_type == "edit") %>
+		<p class="change-password-text">Need a new password? Change it below!</p>
+	<% end %>
 	<div class="field">  
 		<%= f.label :password %>  <br />
 		<%= f.password_field :password %>  
