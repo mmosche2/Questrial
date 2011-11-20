@@ -1,69 +1,39 @@
-<!-------------- LEFT CONTENT 
-<div class="left_content index">
-  
-  <div class="login-box home">
-	<% if !signed_in? %>
-		<%= render 'shared/loginform' %>
-	<% else %>
-		<p class="home-questrial">Questrial</p>
-		<p class="home-slogan">Level up your life</p>
-	<% end %>
-  </div>
-  
+<div class="full_content">
 
-
-
-</div>
-<!-------------- RIGHT CONTENT 
-<div class="right_content">
-	
-	<div class="home-sales-box">
-		<p>Have you ever thought...</p>
-		<ul>
-			<li>"Tomorrow I'll watch less TV"</li>
-			<li>"I'll start going to the gym every day once this big project ends"</li>
-			<li>"I'll try tweaking something in my life at some point in the future"</li>
-		</ul>
-		<p>If you are like most people, you have great ideas but just can't find the motivation to start.
-			Questrial wants to provide you that support.</p>
-		<p>Follow these simple steps to get started today:</p>
-		<ul>
-			<li><b>Sign Up</b></li>
-			<li><b>Browse</b> for a quest that matches your goals</li>
-			<li><b>Join</b> or <b>Create</b> a quest</li>
-			<li><b>Share</b> your progress and results</li>
-		</ul>
-		<p> Still skeptical? Browse <%= link_to 'existing quests...', quests_path %>
+  <div class="home-page-text">
+	<p class="home-page-text-welcome">
+		Welcome to Questrial, your place to expand your experiences.
+	</p>
+	<div class="home-page-text-box">
+		<p class="home-page-text-select">
+			Select your obstacle,
+		</p>
+		<p class="home-page-text-gather">
+			gather some friends,
+		</p>
+		<p class="home-page-text-start">
+			and start your Quest.
+	</p>
 	</div>
-	
-</div>
-<div class="full_content">
-  <div class="quote">
-	<p class="quote-text">"All life is an experiment. The more experiments you make the better."</p>
-	<p class="quote-author">- Ralph Waldo Emerson</p>
   </div>
-</div>
---------------->
-
-<div class="full_content">
 
   <div class="login-box home">
 	<div class="home-center">
 	<% if !signed_in? %>
-		<%= link_to 'Login', signin_path, :class => "home-button login" %>
-		<%= link_to 'Signup', signup_path, :class => "home-button signup" %>
+		<%= render 'shared/loginform' %>
 	<% else %>
 		<h1 class="home-welcome">Welcome, <%= current_user.name %> </h1>
 	<% end %>
 	</div>
+  </div>
+  
+  <div class="clear"> </div>
 	
+  <div class="featured-box">	
 	<div class="featured-quest-box">
-		<h1> Featured Experiments </h1>
+		<h1> Featured Quests </h1>
 		<%= render @quests %>
 	</div>
-	
-
-
 
   </div>
   

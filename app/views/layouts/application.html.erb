@@ -39,12 +39,12 @@
 		
 		<div id="top_navigation">
 		  <div class="userbox">
-			<%= link_to 'Find Your Quest', quests_path, :class => "nav_header red" %>
+			<%= link_to 'Join', quests_path, :class => "nav_header red" %>
 			
 		  
 			<% if signed_in? %>
-				<%= link_to 'Create Your Quest', new_quest_path, :class => "nav_header" %>
-				<%= link_to 'My Profile', current_user, :class => "nav_header" %>
+				<%= link_to 'Create', new_quest_path, :class => "nav_header" %>
+				<%= link_to 'My Quests', current_user, :class => "nav_header" %>
 				<%= link_to 'My Account', edit_user_path(current_user), :class => "nav_header" %>
 				<%= link_to 'Logout', signout_path, :method => :delete, :class => "nav_header" %>
 			<% else %>
@@ -55,7 +55,6 @@
 		  
 		</div>
     </div>
-
 <!------------ END HEADER ---------------->	   
 <div class="body">
 	<% flash.each do |key, value| %>

@@ -61,7 +61,7 @@ class QuestsController < ApplicationController
   def new
     @quest = Quest.new
 	@categories = find_all_categories
-
+	
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @quest }
@@ -78,6 +78,7 @@ class QuestsController < ApplicationController
   # POST /quests.json
   def create
     @quest = Quest.new(params[:quest])
+	@categories = find_all_categories
 
     respond_to do |format|
       if @quest.save

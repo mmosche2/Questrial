@@ -4,6 +4,7 @@ class Quest < ActiveRecord::Base
 	validates :start, :presence => true
 	validates :enddate,   :presence => true
 	validates :description, :presence => true
+	validate :start_before_end?
 					  
 	has_many :comments, :dependent => :destroy
 	has_many :reverse_experiences,  :foreign_key => "joined_id",
@@ -60,4 +61,13 @@ class Quest < ActiveRecord::Base
 	  end
 	end
 	
+	def start_before_end?
+    unless :start <= :enddate
+      errors.add(:start, "is greater than the end date")
+    end
+  end
+
+
+	
 end
+

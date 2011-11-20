@@ -80,6 +80,9 @@ a.nav_header{
 		opacity: 1;
 //		text-shadow: 2px 2px 5px white;
 	}
+	a.nav_header:selected{
+		text_decoration:underline;
+	}
 
 .userbox{
 	border-top: medium none;

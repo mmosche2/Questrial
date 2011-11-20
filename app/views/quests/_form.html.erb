@@ -6,6 +6,10 @@
     <td class="fieldlabel"><%= f.label :title %></td>
     <td><%= f.text_field :title %></td>
   </tr>
+  <tr>
+	<td></td>
+	<td class="newquest-label-desc">Begin titles with a verb</td>
+  </tr>
   <tr class="field">
     <td class="fieldlabel"><%= f.label :start %></td>
     <td><%= f.date_select :start %></td>
@@ -14,11 +18,18 @@
     <td class="fieldlabel"><%= f.label :end %></td>
     <td><%= f.date_select :enddate %></td>
   </tr>
+  <tr>
+	<td></td>
+	<td class="newquest-label-desc">Give your group enough preparation time</td>
+  </tr>
   <tr class="field">
     <td class="fieldlabel"><%= f.label :category %></td>
     <td><%= f.select :category_id, @categories %></td>
   </tr>
-  
+  <tr>
+	<td></td>
+	<td class="newquest-label-desc">Select the category that your quest best fits into</td>
+  </tr>
   <% if @quest.photo? %>
 	<%= image_tag @quest.photo.url(:small) %>
   <% end %>
@@ -27,9 +38,17 @@
 	<td class="fieldlabel"><%= f.label 'Attach Picture' %></td>
 	<td><%= f.file_field :photo %></td>
   </tr>
+  <tr>
+	<td></td>
+	<td class="newquest-label-desc">A picture is worth a thousand words :)</td>
+  </tr>
   <tr class="field">
     <td class="fieldlabel"><%= f.label :description %></td><br />
     <td><%= f.text_area :description, :size => "50x10" %></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td class="newquest-label-desc">Be sure all details are added to the description!</td>
   </tr>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <tr class="actions">

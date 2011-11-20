@@ -2,9 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.home-page-text{
+	font-size: 24px;
+	float: left;
+	width: 650px;
+}
+.home-page-text-welcome{
+	font-weight: bold;
+	margin:0px;
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+.home-page-text-select{
+	margin:5px 0px;
+}
+.home-page-text-gather{
+	margin: 5px 20px;
+}
+.home-page-text-start{
+	margin: 5px 40px;
+}
 .login-box.home{
 	text-align:center;
+	float: right;
+	width: 200px;
+	padding: 10px 30px;
 }
 
 .home-button{
