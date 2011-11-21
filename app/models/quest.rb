@@ -62,7 +62,7 @@ class Quest < ActiveRecord::Base
 	end
 	
 	def start_before_end?
-    unless :start <= :enddate
+    unless self.start <= self.enddate
       errors.add(:start, "is greater than the end date")
     end
   end

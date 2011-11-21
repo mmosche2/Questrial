@@ -20,7 +20,8 @@ demos/demo02.html: demos/demo02-37084173ef248ead0128ee9b6ca9590b.html
 demos/demo03.html: demos/demo03-f9eff56c0fea833a61f25b96e9c55279.html
 demos/demo04.html: demos/demo04-dda3f0d8b2185853e4e89fe3a7b966e5.html
 demos/demo05.html: demos/demo05-f14bc21c968db4bdea3a0e0fd0f5bed7.html
+jquery-1.7.min.js: jquery-1.7.min-ee90cbc72c17d820f75ee69252cc1282.js
 jquery-ui.min.js: jquery-ui.min-a125f4a7d0e7b623924874ed100e3ebd.js
 jquery.min.js: jquery.min-bfc8890cd08eb0a368462df9c34f82b1.js
-application.js: application-133f01cdb797c22b21d598ca50830298.js
-application.css: application-99687271baecdb27126a9fc8d3b01dc7.css
+application.js: application-9d872f68f5ce76c9cb21d4f580b62afe.js
+application.css: application-7a2dd5a51fefc57e60fda9ecd3e9201c.css

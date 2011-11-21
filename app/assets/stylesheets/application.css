@@ -96,11 +96,11 @@ a.nav_header{
 		opacity: 1;
 //		text-shadow: 2px 2px 5px white;
 	}
-	a.nav_header:selected{
-		text_decoration:underline;
+	a.nav_header.active{
+		color: red;
 	}
 
-.userbox{
+#UserNavBox{
 	border-top: medium none;
 	float: right;
 	font-size: 12px;

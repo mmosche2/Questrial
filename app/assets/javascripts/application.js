@@ -7,3 +7,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+ $(function(){
+   var path = location.pathname.substring(1);
+   if ( path )
+     $('#UserNavBox a[href$="' + path + '"]').attr('class', 'nav_header active');
+
+ });
+
+
