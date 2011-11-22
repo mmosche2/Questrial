@@ -2,7 +2,9 @@
 	<td>
 		<span class="commenter"> 
 			<% if comment.user_id %>
-				<%= link_to comment.commenter, User.find(comment.user_id) %>
+				<% thisuser = User.find(comment.user_id) %>
+				<%= link_to gravatar_for(thisuser, :size => 30), thisuser %>
+				<%= link_to comment.commenter, thisuser %>
 			<% else %>
 				<%= comment.commenter %>
 			<% end %>

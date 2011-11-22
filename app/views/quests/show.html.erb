@@ -88,7 +88,10 @@
 	<div class="this-quest-stats">
 	
 		<h2 class="this-quest-title-label">Quest Stats</h2>
-
+		launch: <%= @launchdays %> <br />
+		today: <%= Date.today %><br />
+		start: <%= @quest.start %><br />
+		end: <%= @quest.enddate %><br />
 		<% if @status == "Active" %>
 			<div class="myquest-stat big day green">
 				<p class="myquest-stat-label big"> Today</p>
