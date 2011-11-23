@@ -10,6 +10,15 @@
 		<%= f.label :email %>  <br />
 		<%= f.text_field :email %>  
 	</div>  
+<!-- TO MAKE ADMIN, ADD ADMIN TO ATTR_ACCESSIBLE AND UNCOMMENT HERE
+	<div class="field">  
+		<%= f.label :admin %>  <br />
+		<%= f.radio_button(:admin, true) %> 
+		<%= label_tag(:admin, "true") %>
+		<%= f.radio_button(:admin, false) %> 
+		<%= label_tag(:admin, "false") %>
+	</div>  
+-->
 	<% if (form_type == "edit") %>
 		<p class="change-password-text">Need a new password? Change it below!</p>
 	<% end %>
