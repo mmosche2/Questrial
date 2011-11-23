@@ -5,10 +5,10 @@
 	
 	<ul class="users">
 	  <% @leaderboard.each do |u| %>
-		<%= render :partial => "user", :locals => {:user => u[0]} %>
+		<%= render :partial => "user", :locals => {:user => u[0], :leaderboard => "true"} %>
 	  <% end %>
 	</ul>
-	
+	<%= will_paginate @leaderboard %>	
 </div>
 
 <!-------------- RIGHT CONTENT --------------->

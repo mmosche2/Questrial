@@ -6,11 +6,18 @@
 		<% if @user.admin? %>
 			<span class="admin-badge">Admin</span>
 		<% end %>
+		<div class="user-admin-box">
+			<% if signed_in? && current_user.admin? %>
+				<%= link_to "delete", @user, :method => :delete, :confirm => "You sure?",
+											:title => "Delete #{@user.name}" %>
+			<% end %>
+		</div>
 	</h1>
 	
 	<div class="points-circle user">
 		<%= @points %>
 	</div>
+	
 </div>
 <!-------------- LEFT CONTENT --------------->
 <div class="left_content profile">

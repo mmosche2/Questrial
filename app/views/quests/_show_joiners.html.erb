@@ -5,7 +5,7 @@
 
       <% unless @users.empty? %>
         <ul class="users">
-          <%= render @users %>
+          <%= render @users, :locals => {:leaderboard => "false"} %>
         </ul>
         <%= will_paginate @users %>
       <% end %>

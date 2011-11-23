@@ -1,14 +1,18 @@
-<li>
-  <%= gravatar_for user, :size => 30 %>
-  <%= link_to user.name, user %>
-  <% if signed_in? && current_user.admin? %>
-  | <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
-                                :title => "Delete #{user.name}" %>
-  <% end %>
-  
-  <% @mypoints = getpoints(user) %>
-  <div class="points-circle thisuser">
-		<%= @mypoints %>
-  </div>
+<li class="users-leaderboard-list">
 
-  </li>
+	<%= gravatar_for user, :size => 30 %>
+	<%= link_to user.name, user %>
+  
+
+	<% @mypoints = getpoints(user) %>
+	<% if (:leaderboard == "false") %>
+		<div class="points-circle thisuser">
+	<% else %>	
+		<div class="points-circle thisuser leaderboard">
+	<% end %>
+			<%= @mypoints %>
+		</div>
+
+
+	</li>
+	

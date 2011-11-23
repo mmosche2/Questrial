@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 	before_filter :authenticate, :except => [:show, :new, :create]
 	before_filter :correct_user, :only => [:edit, :update]
 	before_filter :admin_user,	 :only => :destroy
+	
+	require 'will_paginate/array'
 
   def new
 	@title = "Sign up"
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
 	@leaderboard = Array.new
 	@leaderboard = getPointLeaders(@users)
 	
-	
+	@leaderboard = @leaderboard.paginate(:page => params[:page], :per_page => 10)
 
 
 	

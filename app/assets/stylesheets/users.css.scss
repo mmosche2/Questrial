@@ -190,12 +190,21 @@ div.myquest-stat{
 		top: 140px;
 		background: rgba(0, 200, 0, 0.7);
 	}
+	.points-circle.userlist{
+		background: rgba(0, 200, 0, 0.7);
+		position: relative;
+		float:left;
+	}
 	.points-circle.thisuser{
 		position:relative;
 		top: -15px;
 		left: -15px;
 		background: rgba(0, 200, 0, 0.7);
 	}
+		.points-circle.thisuser.leaderboard{
+			top: -32px;
+			left: -35px;
+		}
 	.points-circle.thisquest{
 		height: 20px;
 		left: -15px;
@@ -220,7 +229,25 @@ div.myquest-stat{
 		font-family: helvetica;
 	}
 	
-	
+.user-admin-box{
+	float:right;
+	font-size: 0.5em;
+	border: 1px solid black;
+	padding: 2px;
+}
+	.user-admin-box a{
+		text-decoration: none;
+
+	}
+
+li.users-leaderboard-list{
+	border-bottom: 1px solid black;
+	height: 40px;
+	width: 400px;
+	margin-top: 10px;
+}
+
+
 /*** NEW/EDIT FORM **/
 
 .change-password-text{
