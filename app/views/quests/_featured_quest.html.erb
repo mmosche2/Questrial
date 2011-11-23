@@ -18,7 +18,7 @@
 		<div class="quest-list-photo"> 
 			<%= link_to image_tag(quest.photo.url(:thumb)), quest %>
 			<div class="points-circle thisquest">
-				<p class="quest-list-points"><%= quest.joiners.count %></p>
+				<p class="quest-list-points"><%= quest.joiners.size %></p>
 			</div>
 		</div>
 		
@@ -48,7 +48,7 @@
 			
 			<div class="myquest-stat small joiners">
 				<p class="myquest-stat-label small"> Joins </p>
-				<%= quest.joiners.count %>
+				<%= quest.joiners.size %>
 			</div>
 		</div>
 		

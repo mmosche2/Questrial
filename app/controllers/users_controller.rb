@@ -22,8 +22,16 @@ class UsersController < ApplicationController
   end 
 
   def index
-	@title = "All users"
-	@users = User.paginate(:page => params[:page], :per_page => 5, :order => 'id')
+	@title = "Leaderboard"
+
+	@users = User.all
+     
+	@leaderboard = Array.new
+	@leaderboard = getPointLeaders(@users)
+	
+	
+
+
 	
   end
   
@@ -78,6 +86,16 @@ class UsersController < ApplicationController
 		redirect_to(root_path) unless current_user?(@user)
 	end
 	
+	def getPointLeaders(users)
+		@temp_pointleaders = Array.new
+		x=0
+		users.each do |u|
+			@temp_pointleaders[x] = [u, getpoints(u)]
+			x += 1
+		end
+		@temp_pointleaders.sort! {|a,b| b[1] <=> a[1]}
+		return @temp_pointleaders
+	end
 	
   
 end
