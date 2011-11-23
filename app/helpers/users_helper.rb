@@ -6,7 +6,15 @@ module UsersHelper
                                             :gravatar => options)
   end
   
-
+  def getpoints(user)
+	@points = 0
+	@quests = user.joined
+	@all_completed_quests = @quests.where("enddate < ?", Date.today)
+	@all_completed_quests.each do |cq|
+		@points += cq.joiners.count
+	end
+	return @points
+  end
 
   
 end

@@ -23,5 +23,5 @@ demos/demo05.html: demos/demo05-f14bc21c968db4bdea3a0e0fd0f5bed7.html
 jquery-1.7.min.js: jquery-1.7.min-ee90cbc72c17d820f75ee69252cc1282.js
 jquery-ui.min.js: jquery-ui.min-a125f4a7d0e7b623924874ed100e3ebd.js
 jquery.min.js: jquery.min-bfc8890cd08eb0a368462df9c34f82b1.js
-application.js: application-9d872f68f5ce76c9cb21d4f580b62afe.js
-application.css: application-ad0aa6bf332490085e6eb371ace7f023.css
+application.js: application-d3d7db3e0dd6b9d0374086b2bc372b40.js
+application.css: application-f663885816faf5a91709045c45a0733d.css

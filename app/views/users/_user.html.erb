@@ -5,4 +5,10 @@
   | <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
                                 :title => "Delete #{user.name}" %>
   <% end %>
-</li>
+  
+  <% @mypoints = getpoints(user) %>
+  <div class="points-circle thisuser">
+		<%= @mypoints %>
+  </div>
+
+  </li>

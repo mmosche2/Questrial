@@ -12,17 +12,14 @@
 	<div class="quest-listing featured completed">
 <% end %>
 	
-	<div class="quest-list-category featured">
-		<% if quest.category.nil? %>
-			<p class="quest-list-category featured">Miscellaneous</p>
-		<% else %>
-			<p class="quest-list-category featured"><%= quest.category.name %></p>
-		<% end %>
-	</div>
+	
 	
 	<div class="quest-list-top-area">
 		<div class="quest-list-photo"> 
 			<%= link_to image_tag(quest.photo.url(:thumb)), quest %>
+			<div class="points-circle thisquest">
+				<p class="quest-list-points"><%= quest.joiners.count %></p>
+			</div>
 		</div>
 		
 		<div class="joined-count">	
@@ -60,7 +57,14 @@
 			
 			<p class="quest-list-title"><%= link_to quest.title, quest %></p>
 			
-			
+			<div class="quest-list-category featured">
+				<% if quest.category.nil? %>
+					<p class="quest-list-category featured">Miscellaneous</p>
+				<% else %>
+					<p class="quest-list-category featured"><%= quest.category.name %></p>
+				<% end %>
+			</div>
+	
 		</div>
 	</div>
 	<div class="clear"></div>

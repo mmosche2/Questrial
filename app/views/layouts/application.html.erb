@@ -38,13 +38,13 @@
 				
 			  
 				<% if signed_in? %>
-					<%= link_to 'Create', new_quest_path, :class => "nav_header" %>
-					<%= link_to 'My Quests', current_user, :class => "nav_header" %>
-					<%= link_to 'My Account', edit_user_path(current_user), :class => "nav_header" %>
-					<%= link_to 'Logout', signout_path, :method => :delete, :class => "nav_header" %>
+					<%= link_to 'Create', new_quest_path, :class => "nav_header red" %>
+					<%= link_to 'My Quests', current_user, :class => "nav_header red" %>
+					<%= link_to 'My Account', edit_user_path(current_user), :class => "nav_header black" %>
+					<%= link_to 'Logout', signout_path, :method => :delete, :class => "nav_header black" %>
 				<% else %>
-					<%= link_to 'Signup', signup_path, :class => "nav_header" %>
-					<%= link_to 'Login', signin_path, :class => "nav_header" %>
+					<%= link_to 'Signup', signup_path, :class => "nav_header black" %>
+					<%= link_to 'Login', signin_path, :class => "nav_header black" %>
 				<% end %>
 			  </div>
 			  

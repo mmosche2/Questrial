@@ -92,12 +92,14 @@ a.nav_header{
 		color: #A65240;
 		font-size: 16px;
 	}
+	a.nav_header.black{
+	}
 	a.nav_header:hover{
 		opacity: 1;
 //		text-shadow: 2px 2px 5px white;
 	}
 	a.nav_header.active{
-		color: red;
+		text-decoration: underline;
 	}
 
 #UserNavBox{

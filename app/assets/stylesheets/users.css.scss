@@ -169,6 +169,56 @@ div.myquest-stat{
 		margin: 0px;
 	}
 
+.points-circle {
+	padding: 2px;
+	background: rgba(250,0,0,.7);
+	border: 2px solid white;
+	color: white;
+	border-radius: 50px;
+	position: absolute;
+	width: 20px;
+	font-family: helvetica;
+	font-weight: bold;
+	text-align: center;
+}
+	.points-circle.myquest{
+		left: 120px;
+		top: 125px;
+	}
+	.points-circle.user{
+		left: 150px;
+		top: 140px;
+		background: rgba(0, 200, 0, 0.7);
+	}
+	.points-circle.thisuser{
+		position:relative;
+		top: -15px;
+		left: -15px;
+		background: rgba(0, 200, 0, 0.7);
+	}
+	.points-circle.thisquest{
+		height: 20px;
+		left: -15px;
+		top: -70px;
+		position: relative;
+		margin-bottom: -30px;
+	}
+	.quest-list-points{
+		margin: 4px 0px;
+		font-family:helvetica;
+	}
+	.points-circle.quest{
+		top: 60px;
+		left: 135px;
+		height: 40px;
+		width: 40px;
+		font-size: 2.7em;
+		border: 4px solid white;
+	}
+	.quest-points{
+		margin: 10px 0px;
+		font-family: helvetica;
+	}
 	
 	
 /*** NEW/EDIT FORM **/

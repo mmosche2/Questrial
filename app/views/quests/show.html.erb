@@ -9,6 +9,11 @@
 			<div class="quest-photo"> 
 				<%= image_tag @quest.photo.url(:original) %>
 			</div>
+			
+			<div class="points-circle quest">
+				<p class="quest-points"><%= @quest.joiners.count %></p>
+			</div>
+			
 			<div class="this-quest-title-text-box">
 				<p class="this-quest-title"><%= @quest.title %></p>
 				<p class="this-quest-category"><%= @category.name %> Quest</p>
