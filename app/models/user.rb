@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 				:length 	=> { :maximum => 50 }
 				
 	def feed
-		Comment.where("user_id = ?", id)
+		Comment.from_quests_joined_by(self)
 	end
 	
 	def joined?(joined)
@@ -32,6 +32,14 @@ class User < ActiveRecord::Base
 	
 	def unjoin!(joined)
 		experiences.find_by_joined_id(joined).destroy
+	end
+	
+	def self.user_search(search)
+	  if (search != "")
+		where 'name LIKE ? OR email LIKE ?', "%#{search}%", "%#{search}%"
+	  else
+		scoped
+	  end
 	end
 
 end

@@ -26,27 +26,42 @@ class UsersController < ApplicationController
   def index
 	@title = "Leaderboard"
 
-	@users = User.all
+	if (!params[:search].blank?)
+		@users = User.user_search(params[:search])
+	else
+		@users = User.all
+	end
      
 	@leaderboard = Array.new
 	@leaderboard = getPointLeaders(@users)
 	
 	@leaderboard = @leaderboard.paginate(:page => params[:page], :per_page => 10)
-
-
 	
   end
   
   def show
 	@user = User.find(params[:id])
 	@quests = @user.joined
-	@active_quests = @quests.where("start <= ? AND enddate >= ?", Date.today, Date.today).order("start ASC").paginate(
+	
+	@active_quests = @quests.where("start <= ? AND enddate >= ?", Date.today, Date.today)
+	@active_quests_size = @active_quests.size
+	@active_quests = @active_quests.order("start ASC").paginate(
 											:page => params[:apage], :per_page => 3, :order => 'start')
-	@upcoming_quests = @quests.where("start > ?", Date.today).order("start ASC").paginate(
+											
+	@upcoming_quests = @quests.where("start > ?", Date.today)
+	@upcoming_quests_size = @upcoming_quests.size
+	@upcoming_quests = @upcoming_quests.order("start ASC").paginate(
 											:page => params[:upage], :per_page => 3, :order => 'start')
-	@completed_quests = @quests.where("enddate < ?", Date.today).order("start ASC").paginate(
+											
+	@completed_quests = @quests.where("enddate < ?", Date.today)
+	@completed_quests_size = @completed_quests.size
+	@completed_quests = @completed_quests.order("start ASC").paginate(
 											:page => params[:cpage], :per_page => 3, :order => 'start')
+	
 	@points = getpoints(@user)
+	@points_upcoming = getpoints_upcoming(@user)
+	@points_active = getpoints_active(@user)
+	
 	@title = @user.name
 	@feed_items = @user.feed.paginate(:page => params[:page], :per_page => 10).limit(20)
   end

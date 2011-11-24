@@ -7,10 +7,19 @@
 	  <% @leaderboard.each do |u| %>
 		<%= render :partial => "user", :locals => {:user => u[0], :leaderboard => "true"} %>
 	  <% end %>
+
 	</ul>
 	<%= will_paginate @leaderboard %>	
 </div>
 
 <!-------------- RIGHT CONTENT --------------->
 <div class="right_content new_form">
+
+	<%= form_tag users_path, :method => 'get' do %>
+	  <p>
+		Search: <%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", :name => nil %>
+	  </p>
+	<% end %>
+	
 </div>
