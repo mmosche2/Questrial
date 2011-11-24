@@ -15,12 +15,13 @@
 	  <p>
 		Search: <%= text_field_tag :search, params[:search] %>
 		Category: <%= select("quest", "category", @categories, :selected => @selected_category, :include_blank => 'all' ) %>
+		Sort by: <%= select("quest", "sort", {"Date" => "1", "Points" => "2"}, :selected => @selected_sort) %>
 		<%= submit_tag "Search", :name => nil %>
 	  </p>
 	<% end %>
 
 	<div class="quests-list-box">
-		<h2 class="myquests-list-label">Upcoming</h2>
+		<h2 class="myquests-list-label"><%= @upcoming_quests_size %> Upcoming</h2>
 		<div class="find-quests-box">
 				<%= render @upcoming_quests %>
 		</div>
@@ -30,7 +31,7 @@
 	<div class="clear"></div>
 	
 	<div class="quests-list-box">
-		<h2 class="myquests-list-label">Active</h2>
+		<h2 class="myquests-list-label"><%= @active_quests_size %> Active</h2>
 		<div class="find-quests-box">
 				<%= render @active_quests %>
 		</div>
@@ -40,7 +41,7 @@
 	<div class="clear"></div>
 	
 	<div class="quests-list-box">
-		<h2 class="myquests-list-label">Completed</h2>
+		<h2 class="myquests-list-label"><%= @completed_quests_size %> Completed</h2>
 		<div class="find-quests-box">
 				<%= render @completed_quests %>
 		</div>

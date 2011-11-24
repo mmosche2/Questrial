@@ -7,13 +7,34 @@ class QuestsController < ApplicationController
   def index
 	@title = "All quests"
 	@categories = find_all_categories
+
+	@active_quests = Quest.where("start <= ? AND enddate >= ?", Date.today, Date.today)
+	@upcoming_quests = Quest.where("start > ?", Date.today)
+	@completed_quests = Quest.where("enddate < ?", Date.today)	
 	
-	@active_quests = Quest.where("start <= ? AND enddate >= ?", Date.today, Date.today).order("start ASC").paginate(
-											:page => params[:apage], :per_page => 5, :order => 'start')
-	@upcoming_quests = Quest.where("start > ?", Date.today).order("start ASC").paginate(
-											:page => params[:upage], :per_page => 5, :order => 'start')
-	@completed_quests = Quest.where("enddate < ?", Date.today).order("start ASC").paginate(
-											:page => params[:cpage], :per_page => 5, :order => 'start')
+
+	
+	sort_upcoming = "start ASC, Joiners_count DESC"
+	sort_active = "start DESC, Joiners_count DESC"
+	sort_completed = "start DESC, Joiners_count DESC"
+	
+	if (!params[:quest].blank?)
+		if (!params[:quest][:sort].blank?)
+			@selected_sort = params[:quest][:sort]
+			
+			if (@selected_sort == "2")
+				sort_upcoming = "Joiners_count DESC, start ASC"
+				sort_active = "Joiners_count DESC, start DESC"
+				sort_completed = "Joiners_count DESC, start DESC"
+			end
+		end
+			
+	end
+
+	
+	@active_quests = @active_quests.order(sort_active)
+	@upcoming_quests = @upcoming_quests.order(sort_upcoming)
+	@completed_quests = @completed_quests.order(sort_completed)	
 	
 	
 	if (!params[:search].blank?)
@@ -29,8 +50,17 @@ class QuestsController < ApplicationController
 			@upcoming_quests = @upcoming_quests.search_by_category(@selected_category)
 			@completed_quests = @completed_quests.search_by_category(@selected_category)
 		end
+		
 	end
 	
+	@active_quests_size = @active_quests.size
+	@upcoming_quests_size = @upcoming_quests.size
+	@completed_quests_size = @completed_quests.size
+	
+	@active_quests = @active_quests.paginate(:page => params[:apage], :per_page => 5)
+	@upcoming_quests = @upcoming_quests.paginate(:page => params[:apage], :per_page => 5)
+	@completed_quests = @completed_quests.paginate(:page => params[:apage], :per_page => 5)
+
 	
 	respond_to do |format|
       format.html # index.html.erb
