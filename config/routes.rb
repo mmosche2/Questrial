@@ -27,6 +27,7 @@ Questrial::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/faq', 	:to => 'pages#faq'
   match '/about', :to => 'pages#about'
+  match "/" => redirect("/home/index")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

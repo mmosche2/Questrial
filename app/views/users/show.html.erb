@@ -6,6 +6,9 @@
 		<% if @user.admin? %>
 			<span class="admin-badge">Admin</span>
 		<% end %>
+		<% if @user.id == current_user.id %>
+			<%= link_to 'Edit My Account', edit_user_path(current_user), :class => "edit-my-account" %>
+		<% end %>
 		<div class="user-admin-box">
 			<% if signed_in? && current_user.admin? %>
 				<%= link_to "delete", @user, :method => :delete, :confirm => "You sure?",

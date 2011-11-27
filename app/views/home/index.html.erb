@@ -1,49 +1,39 @@
 
-<div class="home_top_content">
-	<div class="home-page-text featured">
-		<p class="home-page-text-welcome">
-			Welcome to Questrial, <br /> your home for self-improvement.
-		</p>
+	<div class="home-page-info-box">
+	
+		<ul class="home-page-text-box">
+			<li class="home-page-text">
+				Plan your mission
+				<p class="home-page-subtext">What is your goal?</p>
+			</li>
+			<li class="home-page-text">
+				Gather your friends 
+				<p class="home-page-subtext">Who will share your journey?</p>
+			</li>
+			<li class="home-page-text">
+				Embark on your Quest
+				<p class="home-page-subtext">How much can you grow?</p>
+			</li>
+			
+		</ul>
 	</div>
-</div>
 
 <!-------------- LEFT CONTENT --------------->
-<div class="left_content">
-
-  <div class="home-page-text">
-
-	<ul class="home-page-text-box">
-		<li class="home-page-text-select">
-			Plan your mission - 
-			<span class="home-page-subtext">What is your goal?</span>
-		</li>
-		<li class="home-page-text-gather">
-			Gather your friends - 
-			<span class="home-page-subtext">Who will share your journey?</span>
-		</li>
-		<li class="home-page-text-grow">
-			Embark on your Quest - 
-			<span class="home-page-subtext">How much can you grow?</span>
-		</li>
-		<%= link_to 'Leaderboard', users_path, :class => "quiet" %>
-
-	</ul>
-	
-  </div>
+<div class="left_content home">
 
   <% if !signed_in? %>
-  <p class="home-page-text-start">
-		Ready to become a better you?
+	<p class="home-page-text-start">
+		Ready to begin your journey?
 	</p>
-  <div class="login-box home">
-	<div class="home-center">
-	
-		<%= render 'shared/loginform' %>
-	
+	<div class="login-box home">
+		
+			<%= render 'shared/loginform' %>
+		
 	</div>
-  </div>
   <% else %>
-
+	<p class="home-page-text-start">
+		Continue your Journey...
+	</p>
   <% end %>
 	
   <div class="clear"> </div>
@@ -51,25 +41,13 @@
 </div>
 
 <!-------------- RIGHT CONTENT --------------->
-<div class="right_content">
+<div class="right_content home">
   
-  <div class="featured-box">	
 	<div class="featured-quest-box">
-		<h1 class="featured-quest-box-text"> Featured Quests </h1>
+		<p class="featured-quest-box-text"> Featured Quests </p>
 		<% @quests.each do |quest| %>
 			<%= render :partial => "quests/featured_quest", :locals => {:quest => quest} %>
 		<% end %>
 	</div>
-
-  </div>
-
-</div>
-<div class="full_content">
-
-  
-  	  <div class="quote">
-		<p class="quote-text">"All life is an experiment. The more experiments you make the better."</p>
-		<p class="quote-author">- Ralph Waldo Emerson</p>
-	  </div>
 
 </div>

@@ -11,8 +11,7 @@
  $(function(){
    var path = location.pathname.substring(1);
    if ( path )
-	$('#UserNavBox a.nav_header.black[href$="' + path + '"]').attr('class', 'nav_header black active');
-	$('#UserNavBox a.nav_header.red[href$="' + path + '"]').attr('class', 'nav_header red active');
+	$('#UserNavBox a.nav_header[href$="' + path + '"]').attr('class', 'nav_header active');
  });
 
 

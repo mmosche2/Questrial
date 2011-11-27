@@ -8,127 +8,85 @@
 
 /****** HEADER SECTION ******/
 #Header {
-    height: 60px;
-	color: white;
-	font-variant: small-caps;
+    height: 10px;
 	background: #E4F2FD;
 	border-bottom: 5px solid rgba(200,200,0,.3);
+	border-top: 3px solid white;
 	background: #6d9a45;
 	position: absolute;
 	width: 100%;
 
 }
 #Header-holder{
-	height:65px;
+	height:75px;
+	border-bottom: 1px solid #DDDDDD;
 }
 
-div.header_header{
-	height:5px;
-	background-color:white;
-}
 .header-body-box{
 	margin: 0px auto -80px auto;
 	width:980px;
 	text-align: left;
 }
 a.questrial-title {
-	font-family:georgia,serif;
-    color:#3E2F2F;
-    letter-spacing:0;
-    padding:0;
-	font-size: 24px;
-	text-decoration: none;
-	font-size: 28px;
-	font-weight: bold;
 	position: absolute;
-	font-style: italic;
-	color: white;
 	margin: 20px 0px 0px 0px;
 }
-	a.questrial-title:hover{
-		text-shadow: 1px 1px 10px white;
-	}
-a.experimentable-title{
-	font-size: 30px;
-	margin: 20px 0px;
-	float: left;
-	color:#FF5F00;
-	font-family: corbel, verdana;
-	text-decoration: none;
-	font-variant:normal;
-	letter-spacing: -2px;
+
+#slogan{
+	position: absolute;
+	left: 400px;
+	top: 40px;
+	color: #6D9A45;
+	font-size: 14pt;
 	font-weight: bold;
 }
-	a.experimentable-title.able{
-		color: #797979;
-		font-size: 26px;
-		margin-top: 22px;
-		font-weight: bold;
-		font-family: corbel;
-		font-style: italic;
-	}
-	a.experimentable-title:hover{
-		text-shadow: 1px 1px 10px white;
-	}
-
 	
 #top_navigation{
-	float: right;
-	font-size: 16px;
-	font-weight: 100;
-}
-a.nav_header{
-	color: black;
-	padding: 5px;
-	text-decoration: none;
-	opacity: 0.7;
-}
-	a.nav_header.red{
-		font-weight: bold;
-		color: #A65240;
-		font-size: 16px;
-	}
-	a.nav_header.black{
-	}
-	a.nav_header:hover{
-		opacity: 1;
-		text-shadow: 2px 2px 5px white;
-	}
-	a.nav_header.active{
-		text-decoration: underline;
-	}
 
+}
 #UserNavBox{
-	border-top: medium none;
 	float: right;
-	font-size: 12px;
-	padding: 8px 5px 7px 10px;
+	padding: 8px 5px;
 	background: white;
 	border-color: #e9e9e9 #e9e9e9 #f5f5f5;
 	border-radius: 0 0 5px 5px;
 	border-style: solid;
 	border-width: 1px;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.2);
-	margin-right: 20px
+	border-top: none;
 }
+a.nav_header{
+	color: #223921;
+	padding: 5px;
+	opacity: 0.7;
+	font-weight: bold;
+	color: rgb(34,57,33);
+	font-size: 16px;
+}
+	a.nav_header:hover{
+		opacity: 1;
+		text-shadow: 0px 7px 6px rgba(0,200,0,.4);
+	}
+	a.nav_header.active{
+		text-shadow: 0px 7px 6px rgba(0,200,0,1);
+
+	}
 
 
 /****** END HEADER SECTION ******/
 div.body{
-	float: left;
 	height: 100%;
 	width: 980px;
 	margin: 0px auto;
 }
-
 div.left_content{
 	float: left;
 	padding:20px;
 	width: 460px;
 }
 	div.left_content.new_form{width:600px;}
-	div.left_content.index{}
 	div.left_content.profile{width:540px;}
+	div.left_content.home{width:300px;}
 
 div.right_content{
 	float: left;
@@ -136,8 +94,9 @@ div.right_content{
 	width: 440px;
 }
 	div.right_content.new_form{width:300px;}
-	div.right_content.index{}
 	div.right_content.profile{width:360px;}
+	div.right_content.home{width:600px;}
+
 	
 div.full_content{
 	float: left;
@@ -145,15 +104,7 @@ div.full_content{
 	width: 940px;
 }
 
-/*******************
-.error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
-.error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
-.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
-.success {background:#e6efc2;color:#264409;border-color:#c6d880;}
-.info {background:#d5edf8;color:#205791;border-color:#92cae4;}
-.error a, .alert a {color:#8a1f11;}
-.info a {color:#205791;}
-*******************/
+/****** NOTICES ******/
 .flash {
 	padding:0.8em;
 	margin:1em;
@@ -180,7 +131,6 @@ div.full_content{
 	height: auto !important;
 	height: 100%;
 	margin: 0px auto -80px auto;
-	background-color:#fdffde;
 	width:980px;
 	z-index: -999;
 }
@@ -194,8 +144,6 @@ div.full_content{
 }
 .footer {
     height: 40px;
-	font-variant: small-caps;
-	padding: 0px 50px;
 	background: #6d9a45;
 }
 #bottom_navigation{
@@ -204,17 +152,13 @@ div.full_content{
 	margin: 0 auto;
 }
 span.bottom_nav_header{
-	float:left;
-	margin-left: 20px;
 }
 a.bottom_nav_header{
 	float: right;
-	padding-right: 10%;
-	text-decoration: none;
+	padding-left: 40px;
 	color: white;
 }
 	a.bottom_nav_header:hover{
 		text-decoration:underline;
 	}
-
 /****** END FOOTER SECTION ******/

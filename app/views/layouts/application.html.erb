@@ -4,6 +4,7 @@
   <title>Questrial</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <script type="text/javascript">
 	bkLib.onDomLoaded(function() {
       nicEditors.allTextAreas({buttonList : ['fontSize','bold','italic','underline','left','right','center','justify','ol','ul',
@@ -30,21 +31,25 @@
 <!------------ HEADER ---------------->	
     <div id="Header">
 		<div class="header-body-box">
-			<%= link_to 'Questrial', "/home/index", :class => "questrial-title" %>
+			<%= link_to image_tag('questrial.png'), "/home/index", :class => "questrial-title"  %>
+			<% if current_page?(:controller => 'home') %>
+				<span id="slogan">Your Journey to Self-Improvement</span>
+			<% end %>
 			
 			<div id="top_navigation">
 			  <div id="UserNavBox">
-				<%= link_to 'Join', quests_path, :class => "nav_header red" %>
+				<%= link_to 'Quests', quests_path, :class => "nav_header" %>
 				
 			  
 				<% if signed_in? %>
-					<%= link_to 'Create', new_quest_path, :class => "nav_header red" %>
-					<%= link_to 'My Quests', current_user, :class => "nav_header red" %>
-					<%= link_to 'My Account', edit_user_path(current_user), :class => "nav_header black" %>
-					<%= link_to 'Logout', signout_path, :method => :delete, :class => "nav_header black" %>
+					<%= link_to 'Create', new_quest_path, :class => "nav_header" %>
+					<%= link_to 'MyJourney', current_user, :class => "nav_header" %>
+					<%= link_to 'Leaderboard', users_path, :class => "nav_header" %>
+					
+					<%= link_to 'Logout', signout_path, :method => :delete, :class => "nav_header" %>
 				<% else %>
-					<%= link_to 'Signup', signup_path, :class => "nav_header black" %>
-					<%= link_to 'Login', signin_path, :class => "nav_header black" %>
+					<%= link_to 'Signup', signup_path, :class => "nav_header" %>
+					<%= link_to 'Login', signin_path, :class => "nav_header" %>
 				<% end %>
 			  </div>
 			  
@@ -54,9 +59,6 @@
 <!------------ END HEADER ---------------->
 
 <div class="head_body_wrapper">
-
-<!-- to add the extra white space at the top
-	<div class="header_header"></div> -->
 
 <!------------ HEADER HOLDER ---------------->	
     <div id="Header-holder">
