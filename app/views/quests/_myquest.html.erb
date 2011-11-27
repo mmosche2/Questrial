@@ -16,10 +16,10 @@
 		<% end %>
 	</div>
 
-	<p class="myquest-list-title"><%= link_to truncate(myquest.title, :length => 25), myquest %></p>
+	<p class="myquest-list-title"><%= link_to myquest.title, myquest %></p>
 	
 	<div class="myquest-list-photo"> 
-		<%= link_to image_tag(myquest.photo.url(:thumb)), myquest %>
+		<%= link_to image_tag(myquest.photo.url(:original), :class => "myquest-photo-img"), myquest, :class => "myquest-photo" %>
 	</div>
 	
 	
