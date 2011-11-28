@@ -3,6 +3,77 @@
 <% launchdays = (Date.today - quest.start).to_i %>
 
 
+  <div class="myquest-box">
+
+	<div class="myquest-list-category-box">
+		<% if quest.category.nil? %>
+			<p class="myquest-list-category">Miscellaneous</p>
+		<% else %>
+			<p class="myquest-list-category"><%= quest.category.name %></p>
+		<% end %>
+	</div>
+
+	<p class="myquest-list-title"><%= link_to quest.title, quest %></p>
+	
+	<div class="myquest-list-photo"> 
+		<%= link_to image_tag(quest.photo.url(:original), :class => "myquest-photo-img"), quest, :class => "myquest-photo" %>
+	</div>
+	
+	
+	<div class="myquest-box-stats">
+
+		<% if @status == "Active" %>
+			<div class="myquest-stat day green">
+				<p class="myquest-stat-label"> Day </p>
+				<%= launchdays + 1 %>
+			</div>
+		<% elsif @status == "Upcoming" %>
+			<div class="myquest-stat day yellow">
+				<p class="myquest-stat-label"> In </p>
+				<%= launchdays.abs %>
+			</div>
+		<% else %>
+			<div class="myquest-stat day grey">
+				<p class="myquest-stat-label"> Done </p>
+				
+			</div>
+		<% end %>
+				
+		<div class="myquest-stat length">
+			<p class="myquest-stat-label"> Length </p>
+			<%= length %>
+		</div>		
+
+<!---------- JOINS BOX -------------->
+		<div class="myquest-stat joiners">
+			<p class="myquest-stat-label"> Joins </p>
+			<%= quest.joiners.size %>
+		</div>
+
+		
+	</div>
+	
+	<div class="points-circle myquest">
+		<%= quest.joiners.size %>
+	</div>
+	
+  </div>
+
+
+
+
+
+
+
+
+
+<!----------- THIS IS THE OLD QUEST DESIGN --------
+
+<% @status = get_status(quest) %>
+<% length = (quest.enddate - quest.start).to_i + 1 %>
+<% launchdays = (Date.today - quest.start).to_i %>
+
+
 <% if @status == "Active" %>
 	<div class="quest-listing active">
 <% elsif @status == "Upcoming" %>
@@ -65,3 +136,4 @@
 	<div class="clear"></div>
 
 </div>
+-->

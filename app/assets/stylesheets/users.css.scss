@@ -12,6 +12,7 @@ ul.users {
 
 h1.user-info{
 	margin-bottom: 0px;
+	float: left;
 }
 
 .admin-badge{
@@ -20,19 +21,48 @@ h1.user-info{
 	border: 1px solid black;
 	padding: 3px;
 }
+.user-button{
+	float:right;
+	border: 1px solid black;
+	padding: 2px;
+	margin-top: 3px;
+}
+	.user-button.admin{
+		margin-right: 10px;
+	}
+	.user-button.edit{	
+		
+	}
 
 .user-point-stats{
-	float: right;
-	text-align: right;
+	text-align: center;
+	font-size: 14px;
+	margin: 0 auto;
 }
+	.user-point-stats td{
+		border: 3px solid rgba(100, 100, 100, 0.5);
+		background: none repeat scroll 0 0 #EEAA99;
+		font-weight: bold;
+		color: white;
+	}
+	.user-point-stats p{
+		margin: 0px;
+	}
+	.user-point-stats .mypoints{
+		background: rgba(0, 200, 0, 0.7);
+	}
+	a.leaderboard-link{
+		text-decoration: underline;
+		margin-right: 355px;
+	}
 
 span#joined{
-	margin-left: 400px;
+	margin-left: 440px;
 }
 
 .myquests-list-box{
-	width: 540px;
-	height: 220px;
+	width: 580px;
+	height: 335px;
 	border-top: 2px solid #8FD26E;
 }
 
@@ -41,27 +71,25 @@ span#joined{
 }
 
 .myquests-list{
-	width: 540px;
+	width: 580px;
 }
 .myquest-box{
-	width: 208px;
-	height: 300px;
+	width: 160px;
+	height: 260px;
 	float: left;
 	padding: 6px;
-	margin-right: 12px;
+	margin-right: 10px;
 	border: 1px solid #CCCCCC;
 	background: #FDFDFD;
 	position: relative;
 	overflow: hidden;
 }
-	.myquest-box.creator{
-		background-color: rgba(200,255,140,.3);
-	}
+
 .myquest-box-stats{
 	margin: 3px;
 	position: absolute;
 	bottom:0;
-	width: 134px;
+	width: 155px;
 }
 	.myquest-box-stats p{margin:0px;}
 	
@@ -82,15 +110,12 @@ span#joined{
 	}
 
 .myquest-list-category-box{
-	position: absolute;
-	font-size: 10px;
-	left: -15px;
-	top: -16px;
 	opacity: 0.8;
 	background: lightBlue;
 	border: 1px solid black;
-	border-radius: 30px;
 	padding: 0px 2px;
+	text-align: center;
+	font-weight: bold;
 }
 .myquest-list-category{
 	margin:0px;
@@ -98,6 +123,9 @@ span#joined{
 
 .myquest-list-photo{
 	margin: 0px;
+	display: table;
+	height: 150px;
+	width: 160px;
 }
 	.myquest-list-photo img:hover{
 		-moz-box-shadow: 0 0 2px 2px #888;
@@ -105,36 +133,27 @@ span#joined{
 		box-shadow: 0 0 2px 2px #888;
 	}
 	.myquest-photo{
-		background-position: center center;
-		width: 208px;
-		height: 150px;
-		display: block;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
 		background-color: #EEE;
 	}
 	.myquest-photo-img{
-		background-position: center center;
-		display: block;
-		background-color: #EEE;
-		margin: auto;
-		line-height:150px;
-		vertical-align: middle;
 	}
 
 div.myquest-stat{
-	width: 30px;
+	width: 40px;
 	float:left;
 	border: 2px solid rgba(100, 100, 100, 0.3);
 	font-family: helvetica;
 	font-weight: bold;
-	font-size: 14px;
-	margin-right: 5px;
 	padding: 2px;
 	opacity: .7;
 	text-align: center;
 
 }
-	.myquest-stat.joiners{background-color:#FFbF00;}
-	.myquest-stat.length{background-color:#E0FFFF;}
+	.myquest-stat.joiners{background-color:#FFbF00;margin-left:5px;}
+	.myquest-stat.length{background-color:#E0FFFF;margin-left:5px;}
 	.myquest-stat.day.green{background-color:#C0FF3E;}
 	.myquest-stat.day.yellow{background-color:#FFFF00;}
 	.myquest-stat.day.grey{background-color:#CCCCCC;}
@@ -203,12 +222,12 @@ div.myquest-stat{
 	text-align: center;
 }
 	.points-circle.myquest{
-		left: 120px;
-		top: 125px;
+		left: 0px;
+		top: 58px;
 	}
 	.points-circle.user{
 		left: 150px;
-		top: 140px;
+		top: 130px;
 		background: rgba(0, 200, 0, 0.7);
 	}
 	.points-circle.userlist{
@@ -250,16 +269,7 @@ div.myquest-stat{
 		font-family: helvetica;
 	}
 	
-.user-admin-box{
-	float:right;
-	font-size: 0.5em;
-	border: 1px solid black;
-	padding: 2px;
-}
-	.user-admin-box a{
-		text-decoration: none;
 
-	}
 
 li.users-leaderboard-list{
 	border-bottom: 1px solid black;

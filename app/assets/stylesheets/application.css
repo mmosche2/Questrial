@@ -85,8 +85,8 @@ div.left_content{
 	width: 460px;
 }
 	div.left_content.new_form{width:600px;}
-	div.left_content.profile{width:540px;}
-	div.left_content.home{width:300px;}
+	div.left_content.profile{width:580px;}
+	div.left_content.home{width:345px;}
 
 div.right_content{
 	float: left;
@@ -94,8 +94,8 @@ div.right_content{
 	width: 440px;
 }
 	div.right_content.new_form{width:300px;}
-	div.right_content.profile{width:360px;}
-	div.right_content.home{width:600px;}
+	div.right_content.profile{width:320px;}
+	div.right_content.home{width:555px;}
 
 	
 div.full_content{
@@ -103,6 +103,10 @@ div.full_content{
 	padding:20px;
 	width: 940px;
 }
+	.full_content.user_show{
+		padding: 0px 20px;
+		text-align: center;
+	}
 
 /****** NOTICES ******/
 .flash {

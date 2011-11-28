@@ -45,9 +45,11 @@
   
 	<div class="featured-quest-box">
 		<p class="featured-quest-box-text"> Featured Quests </p>
-		<% @quests.each do |quest| %>
-			<%= render :partial => "quests/featured_quest", :locals => {:quest => quest} %>
-		<% end %>
+		<div class="featured-quest-listing">
+			<% @quests.each do |quest| %>
+				<%= render :partial => "quests/quest", :locals => {:quest => quest} %>
+			<% end %>
+		</div>
 	</div>
 
 </div>

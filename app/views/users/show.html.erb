@@ -1,32 +1,42 @@
 <!-------------- FULL CONTENT - TOP --------------->
-<div class="full_content">
+<div class="full_content user_show">
 	<h1 class="user-info">
 		<%= gravatar_for @user %>
 		<%= @user.name %>
 		<% if @user.admin? %>
 			<span class="admin-badge">Admin</span>
 		<% end %>
-		<% if @user.id == current_user.id %>
-			<%= link_to 'Edit My Account', edit_user_path(current_user), :class => "edit-my-account" %>
-		<% end %>
-		<div class="user-admin-box">
-			<% if signed_in? && current_user.admin? %>
-				<%= link_to "delete", @user, :method => :delete, :confirm => "You sure?",
-											:title => "Delete #{@user.name}" %>
-			<% end %>
-		</div>
 	</h1>
+	
+	<!-------------- Edit User Button --------------->
+	<% if @user.id == current_user.id %>
+		<%= link_to 'Edit My Account', edit_user_path(current_user), :class => "user-button edit" %>
+	<% end %>
+	<!-------------- Delete User Admin Button --------------->
+	<% if signed_in? && current_user.admin? %>
+		<%= link_to "delete", @user, :method => :delete, :confirm => "You sure?",
+									:title => "Delete #{@user.name}", :class => "user-button admin" %>
+	<% end %>
 	
 	<div class="points-circle user">
 		<%= @points %>
 	</div>
-	<div class="user-point-stats">
-		<p>Current Point Total: <%= @points %></p>
-		<p>Current Active Points: <%= @points_active %></p>
-		<p>Current Upcoming Points: <%= @points_upcoming %></p>
-		<p><b>Projected Point Total: <%= @points_upcoming+@points_active+@points %></b></p>		
-		<%= link_to 'Leaderboard', users_path, :class => "quiet" %>
-	</div>
+	
+	<table class="user-point-stats">
+		<tr>
+			<td class="mypoints">My Points</td>
+			<td>Active Points</td>
+			<td>Upcoming Points</td>
+			<td>Projected Points</td>
+		</tr>
+		<tr>
+			<td class="mypoints"><%= @points %></td>
+			<td><%= @points_active %></td>
+			<td><%= @points_upcoming %></td>
+			<td><%= @points_upcoming+@points_active+@points %></td>
+		</tr>
+	</table>
+		<%= link_to 'Leaderboard', users_path, :class => "leaderboard-link" %>
 	
 </div>
 <!-------------- LEFT CONTENT --------------->

@@ -5,7 +5,7 @@
 table.comments {
 	width: 420px;
 }
-	table.comments.profile{width: 335px;}
+	table.comments.profile{width: 295px;}
 	
 .comment-field-box{
 	background: white;
@@ -53,3 +53,7 @@ p.comment_destroy{
 	float:right;
 	margin:0px;
 }
+	p.comment_destroy a{
+		text-decoration: underline;
+		color: #666666;
+	}
