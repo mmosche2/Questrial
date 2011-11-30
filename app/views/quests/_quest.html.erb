@@ -5,9 +5,9 @@
 
   <div class="myquest-box">
 
-	<div class="myquest-list-category-box">
+	<div class="myquest-list-category-box color<%= quest.category.nil? ? 0 : quest.category.id %>">
 		<% if quest.category.nil? %>
-			<p class="myquest-list-category">Miscellaneous</p>
+			<p class="myquest-list-category">none</p>
 		<% else %>
 			<p class="myquest-list-category"><%= quest.category.name %></p>
 		<% end %>

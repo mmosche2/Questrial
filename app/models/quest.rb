@@ -5,6 +5,7 @@ class Quest < ActiveRecord::Base
 	validates :enddate,   :presence => true
 	validates :description, :presence => true
 	validate :start_before_end?
+	validate :less_than_60_days?
 					  
 	has_many :comments, :dependent => :destroy
 	has_many :reverse_experiences,  :foreign_key => "joined_id",
@@ -64,6 +65,12 @@ class Quest < ActiveRecord::Base
 	def start_before_end?
 		unless self.start <= self.enddate
 		  errors.add(:start, "is greater than the end date")
+		end
+	end
+	
+	def less_than_60_days?
+		unless self.enddate - self.start <= 61
+		  errors.add(:enddate, "error: quest length must be 2 months or less")
 		end
 	end
 

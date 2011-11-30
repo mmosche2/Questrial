@@ -1,9 +1,12 @@
 ---
 3-color-bg.png: 3-color-bg-5418c885942f4799cb747b4d4896a1bb.png
 Q.png: Q-1c9deef4af143132b402cff8f53c8c6b.png
+blackboard.jpg: blackboard-cab93fa4362461be581f9bc53009f268.jpg
+blue_single_checked.png: blue_single_checked-08e792dde9e299d0ef2b75fadd5fd40b.png
 brown-bubbles-bg.jpg: brown-bubbles-bg-a64bda7cd3e877043062680b4563ca68.jpg
 bubbles-bg.jpg: bubbles-bg-7b1034cf53e30ae9e35383247287de45.jpg
 color-bg.png: color-bg-1f0ccb93af681c0d93f855ef21a3e2d6.png
+dots_02.jpg: dots_02-d69285db3e9c81e17479a5d575d45d36.jpg
 favicon.ico: favicon-e68727f8ba5b576ac6ac2bde3f03568a.ico
 fire-bg.jpg: fire-bg-947fb85d23dc671b1ca48b1a0b0804d6.jpg
 frontpage.png: frontpage-4bb79f6407c55ac81d519756cafbcc7e.png
@@ -27,5 +30,5 @@ demos/demo05.html: demos/demo05-f14bc21c968db4bdea3a0e0fd0f5bed7.html
 jquery-1.7.min.js: jquery-1.7.min-ee90cbc72c17d820f75ee69252cc1282.js
 jquery-ui.min.js: jquery-ui.min-a125f4a7d0e7b623924874ed100e3ebd.js
 jquery.min.js: jquery.min-bfc8890cd08eb0a368462df9c34f82b1.js
-application.js: application-7acbd8321aab62f5d8d85e1a34dd7454.js
-application.css: application-f729ec92de3aa156701ab4a9f05102ab.css
+application.js: application-bee2eddb998e21389a7b87ec3525e5cc.js
+application.css: application-175808a12bfb71161d49c00d0f500b93.css

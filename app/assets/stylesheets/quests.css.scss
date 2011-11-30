@@ -162,12 +162,7 @@ div.this-quest-users{
 }
 
 /****** NEW QUEST ******/
-div.rules{}
-p.rules-header{
-	font-size: 20px;
-}
-li.rule{
-	font-size: 16px;
+#new_quest{
 }
 .newquest-title-text{
 	margin:0px;
@@ -179,35 +174,13 @@ li.rule{
 td.nicEdit-form-field{
 	background: white;
 }
-
-/****** COMMENTS ******/
-
-.comment-wall-header{
-	padding:10px 0px;
-	border-bottom: 3px solid #aaa;
+div.rules{}
+p.rules-header{
+	font-size: 20px;
 }
-#CommentWall{
-	display: inline;
-	margin:0px;
+li.rule{
+	font-size: 16px;
 }
-span.comment-count{
-	float:right;
-}
-
-div.comments-full-box{
-	background: #EEEEEE;
-	padding: 10px;
-	border: 3px solid rgba(200, 200, 200, 0.3);
-}
-div.comments-box-form{
-
-}
-
-
-div.comments-with-top-box{
-	width: 440px;
-}
-
 
 div.clear{clear:both;}
 

@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 table.comments {
-	width: 420px;
+	width: 424px;
 }
-	table.comments.profile{width: 295px;}
+	table.comments.profile{width: 305px;}
 	
 .comment-field-box{
 	background: white;
@@ -17,7 +17,7 @@ table.comments tr{
 table.comments tr.comment td{
   border-bottom: 1px solid #CCC;
   vertical-align: top;
-  padding-top: 5px;
+  padding: 5px;
 }
 
 table.comments tr.comment td span.timestamp {
@@ -57,3 +57,31 @@ p.comment_destroy{
 		text-decoration: underline;
 		color: #666666;
 	}
+
+/**** MOVED FROM QUEST.CSS ****/
+.comment-wall-header{
+	padding:10px 5px;
+	border-bottom: 3px solid #aaa;
+}
+#CommentWall{
+	display: inline;
+	margin:0px;
+}
+span.comment-count{
+	float:right;
+}
+
+div.comments-full-box{
+	background: #EEEEEE;
+	padding: 5px;
+	border: 3px solid rgba(200, 200, 200, 0.3);
+}
+div.comments-box-form{
+
+}
+
+div.comments-with-top-box{
+	width: 440px;
+}
+
+tbody tr.comment:nth-child(even) td, tbody tr.even td {background:#e5ecf9;}

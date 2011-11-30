@@ -60,7 +60,6 @@ class QuestsController < ApplicationController
 	@active_quests = @active_quests.paginate(:page => params[:apage], :per_page => 5)
 	@upcoming_quests = @upcoming_quests.paginate(:page => params[:upage], :per_page => 5)
 	@completed_quests = @completed_quests.paginate(:page => params[:cpage], :per_page => 5)
-
 	
 	respond_to do |format|
       format.html # index.html.erb

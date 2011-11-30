@@ -14,10 +14,10 @@
 
 <!-------------- RIGHT CONTENT --------------->
 <div class="right_content new_form">
-
+	<h1>Find a user</h1>
 	<%= form_tag users_path, :method => 'get' do %>
 	  <p>
-		Search: <%= text_field_tag :search, params[:search] %>
+		<%= text_field_tag :search, params[:search] %>
 		<%= submit_tag "Search", :name => nil %>
 	  </p>
 	<% end %>

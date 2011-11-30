@@ -8,10 +8,17 @@
 //= require jquery_ujs
 //= require_tree .
 
+ $(document).ready(function(){
+	
+
+ });
+ 
+ 
+ 
  $(function(){
    var path = location.pathname.substring(1);
    if ( path )
 	$('#UserNavBox a.nav_header[href$="' + path + '"]').attr('class', 'nav_header active');
+	
  });
-
 

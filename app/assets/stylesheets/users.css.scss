@@ -2,14 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/****** USERS LIST - LEADERBOARD ******/
 ul.users {
-  margin-top: 1em;
 }
-
-.users li {
+ul.users li {
   list-style: none;
 }
 
+/*** _user ***/
+li.users-leaderboard-list{
+	background: #EEE;
+	border: 3px solid rgba(200,200,200,.5);
+	height: 30px;
+	width: 400px;
+	margin-top: 5px;
+	padding:5px;
+}
+li.users-leaderboard-list a{
+	margin: 8px;
+	font-size:14px;
+	position: absolute;
+}
+
+/****** SHOW USER ******/
 h1.user-info{
 	margin-bottom: 0px;
 	float: left;
@@ -27,16 +42,10 @@ h1.user-info{
 	padding: 2px;
 	margin-top: 3px;
 }
-	.user-button.admin{
-		margin-right: 10px;
-	}
-	.user-button.edit{	
-		
-	}
+	.user-button.admin{margin-right:10px;}
+	.user-button.edit{}
 
 .user-point-stats{
-	text-align: center;
-	font-size: 14px;
 	margin: 0 auto;
 }
 	.user-point-stats td{
@@ -44,9 +53,6 @@ h1.user-info{
 		background: none repeat scroll 0 0 #EEAA99;
 		font-weight: bold;
 		color: white;
-	}
-	.user-point-stats p{
-		margin: 0px;
 	}
 	.user-point-stats .mypoints{
 		background: rgba(0, 200, 0, 0.7);
@@ -65,11 +71,9 @@ span#joined{
 	height: 335px;
 	border-top: 2px solid #8FD26E;
 }
-
 .myquests-list-label{
 	margin: 10px 0px;
 }
-
 .myquests-list{
 	width: 580px;
 }
@@ -84,7 +88,6 @@ span#joined{
 	position: relative;
 	overflow: hidden;
 }
-
 .myquest-box-stats{
 	margin: 3px;
 	position: absolute;
@@ -92,31 +95,33 @@ span#joined{
 	width: 155px;
 }
 	.myquest-box-stats p{margin:0px;}
-	
-	
 .myquest-list-title{
 	height: 40px;
 	margin: 0px;
 }
 	.myquest-list-title a{
-		text-decoration:none;
 		color: #286B07;
-		font-size: 14px;
 		font-weight: bold;
 	}
 	.myquest-list-title a:hover{
 		color: #5b9f3a;
-		text-shadow: #bbb 0px 0px 3px;
+		text-shadow: 0px 5px 2px rgba(0,200,0,.4);
 	}
 
 .myquest-list-category-box{
 	opacity: 0.8;
-	background: lightBlue;
-	border: 1px solid black;
-	padding: 0px 2px;
 	text-align: center;
 	font-weight: bold;
 }
+	.myquest-list-category-box.color0{background-color: white;}
+	.myquest-list-category-box.color1{background-color: #FFCC66;}
+	.myquest-list-category-box.color2{background-color: lightBlue;}
+	.myquest-list-category-box.color3{background-color: #FF99FF;}
+	.myquest-list-category-box.color4{background-color: #FFCC66;}
+	.myquest-list-category-box.color5{background-color: #99FF66;}
+	.myquest-list-category-box.color6{background-color: #FF99FF;}
+	.myquest-list-category-box.color7{background-color: #FFCCFF;}
+	
 .myquest-list-category{
 	margin:0px;
 }	
@@ -150,7 +155,6 @@ div.myquest-stat{
 	padding: 2px;
 	opacity: .7;
 	text-align: center;
-
 }
 	.myquest-stat.joiners{background-color:#FFbF00;margin-left:5px;}
 	.myquest-stat.length{background-color:#E0FFFF;margin-left:5px;}
@@ -166,7 +170,6 @@ div.myquest-stat{
 		font-size: 32px;
 		text-align: center;
 		border: 3px solid rgba(100, 100, 100, 0.3);
-
 	}
 	
 	//This is used in the quest index (search) page
@@ -177,15 +180,12 @@ div.myquest-stat{
 		margin-right: 0px;
 		padding: 2px;
 		border: 2px solid rgba(100, 100, 100, 0.3);
-
 	}
 
 .myquest-stat-label{
 	font-size: 9px;
 	text-align: left;
 	border-bottom: solid 1px;
-
-
 }
 	.myquest-stat-label.big{
 		font-size:20px;
@@ -202,9 +202,7 @@ div.myquest-stat{
 	}
 
 
-.myquest-stat-value{
-
-}
+.myquest-stat-value{}
 	.myquest-stat-value.big{
 		margin: 0px;
 	}
@@ -269,15 +267,6 @@ div.myquest-stat{
 		font-family: helvetica;
 	}
 	
-
-
-li.users-leaderboard-list{
-	border-bottom: 1px solid black;
-	height: 40px;
-	width: 400px;
-	margin-top: 10px;
-}
-
 
 /*** NEW/EDIT FORM **/
 
