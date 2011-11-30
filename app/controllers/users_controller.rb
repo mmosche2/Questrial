@@ -63,7 +63,11 @@ class UsersController < ApplicationController
 	@points_active = getpoints_active(@user)
 	
 	@title = @user.name
-	@feed_items = @user.feed.paginate(:page => params[:page], :per_page => 10).limit(20)
+	
+	
+	@feed_items = @user.feed.limit(20)
+	@feed_items_size = @feed_items.size
+	@feed_items = @feed_items.paginate(:page => params[:page], :per_page => 10)
   end
   
   
